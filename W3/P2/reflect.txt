@@ -1,0 +1,71 @@
+///////////////////////////////////////////////////////////////////////////
+                              Reflection
+                          Workshop - #3 (P2)
+Full Name  : Mostafa Hasanalipourshahrabadi
+Student ID#: 154581227
+Email      : mhasanalipourshahrab@myseneca.ca
+Section    : NAA
+Date       : 2023-06-02
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+During this workshop, I learned and applied several important concepts 
+related to object-oriented programming. Here is a summary of the topics 
+covered and the skills I acquired:
+
+1. Use of class instead of structure:
+I learned the difference between classes and structures in C++.
+I understood how classes provide encapsulation by combining data members 
+and member functions. 
+
+2. Privacy (public member functions and private members):
+
+I explored the concept of access specifiers (public and private) within a 
+class.
+I realized the importance of data encapsulation and how private members 
+restrict direct access from outside the class.
+I utilized public member functions to provide controlled access to private
+data members.
+
+3.Allocating and deallocating dynamic memory:
+
+I learned about dynamic memory allocation using the new operator to allocate
+memory for objects.
+I understood the need to deallocate memory using the delete operator to avoid
+memory leaks.
+I implemented proper memory management techniques, such as releasing 
+dynamically allocated memory using delete[] when it is no longer needed.
+
+4. Use of member functions in the class:
+
+I leveraged member functions to perform operations on class objects.
+I learned how member functions can access and manipulate private data members.
+I utilized member functions to validate data, set values, and display 
+information about class objects.
+
+5.Formatting conversions using public member functions of ostream:
+
+I used the following public member functions for formatting conversions 
+supported by the ostream class:
+width(int) - Sets the field width to the integer received.
+fill(char) - Sets the fill character for the field width.
+setf(...) - Sets the specified formatting flags.
+unsetf(...) - Unsets the specified formatting flags.
+precision(int) - Sets the precision for floating-point values.
+
+Difficulties and Challenges:
+During this workshop, I encountered some challenges and difficulties, including:
+- Understanding the concept of dynamic memory allocation and managing it correctly
+to avoid memory leaks.
+- Debugging issues related to memory access violations and uninitialized values.
+- Ensuring proper null-termination.
+- Grasping the intricacies of formatting conversions using ostream member 
+functions and using them correctly in the desired output, Specifically the need 
+to use unsetf was quite tricky.
+
+By overcoming these challenges, I gained valuable experience and deepened my 
+understanding of the covered topics.

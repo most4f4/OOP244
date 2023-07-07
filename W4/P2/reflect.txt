@@ -1,0 +1,46 @@
+///////////////////////////////////////////////////////////////////////////
+                              Reflection
+                          Workshop - #4 (P2)
+Full Name  : Mostafa Hasanalipourshahrabadi
+Student ID#: 154581227
+Email      : mhasanalipourshahrab@myseneca.ca
+Section    : NAA
+Date       : 2023-06-09
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+During this workshop, I learned and applied important concepts in object-oriented
+programming. One of the main things I learned was how to create different types
+of constructors. Constructors are special functions that help initialize objects.
+I learned how to create a default constructor, which is used when an object is  
+created without any specific values. I also learned how to create custom
+constructors that take different arguments, allowing me to set specific values
+when creating objects.
+
+Another important concept was the destructor. The destructor is a special function
+that is called when an object is no longer needed. Its purpose is to clean up any 
+resources or memory that the object has used. By defining a destructor, I can ensure
+that memory is properly released, preventing memory leaks and improving the efficiency
+of my program.
+
+I also learned about using references to the current object. This allows me to work 
+with the object directly, rather than creating a separate copy. It's a convenient way
+to access and modify the object's data within its member functions.
+
+Throughout the workshop, I practiced working with dynamic memory allocation. This 
+involves allocating memory for objects or arrays dynamically at runtime. I learned 
+how to properly manage this memory by deallocating it in the destructor, preventing 
+memory leaks and ensuring efficient memory usage.
+
+While working on the workshop, I faced some challenges in understanding certain 
+functions like cin.getline(). However, by studying the provided code examples, I was
+able to overcome the difficulties and successfully implement the required functionality.
+
+Overall, this workshop provided me with a solid understanding of constructors, 
+destructors, dynamic memory allocation, and object manipulation. It emphasized the 
+importance of memory management and taught me how to create and manage objects 
+effectively in an object-oriented programming environment.
