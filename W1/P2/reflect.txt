@@ -1,0 +1,47 @@
+///////////////////////////////////////////////////////////////////////////
+                              Reflection
+                          Workshop - #3 (P2)
+Full Name  : Mostafa Hasanalipourshahrabadi
+Student ID#: 154581227
+Email      : mhasanalipourshahrab@myseneca.ca
+Section    : NAA
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+During this workshop, I used some new things I learnt in C++ programming.
+One of the main things was about namespaces. They help us organize our code
+and avoid name conflicts. By putting related code inside a namespace, we can
+make sure that the names we use are unique and won't clash with other parts 
+of the code.
+I also learned about using namespaces, which makes it easier to access the 
+code inside a namespace. Instead of typing the namespace name every time, 
+we can use the "using namespace" command to make things simpler and more 
+readable.
+Another useful concept I learned was how to break down my code into smaller 
+parts. This helps make the code easier to manage, allows for reusability, 
+and makes it easier for multiple programmers to work together. By dividing 
+the code into smaller modules, we can keep things organized and make it 
+easier to maintain.
+I also learned and used the one-definition-rule. This rule says that each part
+of the code should only have one definition. This is important because having
+multiple definitions can cause errors and unpredictable behavior. 
+Understanding and following this rule ensures that we don't have duplicate 
+definitions causing problems. This together with forward declaration was an 
+important part of completing one of the main header files in this assignment.
+Lastly, I learned about the "#include <iostream>" header file. This file gives
+us access to input and output operations. It allows us to do things like 
+reading user input and displaying output on the screen. It's an important part
+of console-based applications.
+While learning all of this, I faced some challenges. Understanding namespaces
+and how to use them took some time and effort. It was also a bit tricky to 
+figure out how to break down my code into smaller modules, but in the lab
+session, I got the hang of it.
+Overall, this workshop gave me valuable knowledge and skills in using 
+namespaces, breaking down code into modules, following the one-definition-rule,
+and using the "<iostream>" header file. I'm confident that these new skills 
+will help me write better-organized and structured code in the future, despite
+the challenges I faced along the way.
