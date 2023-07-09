@@ -1,0 +1,57 @@
+///////////////////////////////////////////////////////////////////////////
+                              Reflection
+                          Workshop - #6
+Full Name  : Mostafa Hasanalipourshahrabadi
+Student ID#: 154581227
+Email      : mhasanalipourshahrab@myseneca.ca
+Section    : NAA
+Date       : 2023-07-09
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+Throughout this workshop project, I gained valuable insights into object-oriented
+programming and file input/output operations. Here are some key aspects I learned
+and the challenges I encountered:
+
+- Copy Constructors: I discovered the concept of copy constructors, which allowed 
+me to create a new object that is an exact replica of the original object. This 
+was beneficial in situations where I needed to create independent copies without 
+any shared resources.
+
+- Copy Assignment: I learned about copy assignment, which enabled me to update an 
+object with new values without creating a new instance. This approach proved to be 
+efficient and time-saving.
+
+- Preventing Copying and Assignment: I realized that in certain cases, copying or 
+assigning objects can lead to unintended consequences or issues with resource 
+management. To address this, I learned how to prevent copying or assignment by 
+defining private copy constructors or assignment operators.
+
+- Overloading Insertion Operator (<<): I discovered how to customize the output 
+of my objects by overloading the insertion operator (<<). This allowed me to 
+define how my objects are displayed when using the standard output stream.
+
+- Overloading Extraction Operator (>>): I learned how to read input and load it 
+into my objects by overloading the extraction operator (>>). This gave me the 
+ability to define the behavior of reading data from the standard input stream 
+into my objects.
+
+- File Input/Output: I acquired knowledge on reading data from files and saving 
+data to files using ifstream and ofstream. This allowed me to store important 
+information in files or retrieve data from them whenever necessary.
+
+During the project, I encountered several challenges. One notable challenge was 
+managing resources properly, particularly with dynamic memory allocation. It was
+crucial to allocate memory for objects and deallocate it when no longer needed to
+prevent memory leaks. Additionally, I faced difficulties in implementing the copy
+constructor and copy assignment operator correctly. It was essential to ensure 
+that the copied object had its independent resources and didn't share any pointers
+or memory with the original object.
+
+Overall, by tackling these challenges and persistently working through them, I 
+successfully completed the project and deepened my understanding of object-oriented
+programming and file operations.
