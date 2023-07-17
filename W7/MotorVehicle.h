@@ -16,6 +16,7 @@ namespace sdds {
 		MotorVehicle(const char* plateNumber, int vehicleYear);
 		void moveTo(const char* location);
 		std::ostream& write(std::ostream& os) const;
+		std::istream& read(std::istream& in);
 
 
 

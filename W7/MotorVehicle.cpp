@@ -16,18 +16,18 @@ namespace sdds {
 	{
 		//check if the new address is different from the current address
 		if (strCmp(address, location) != 0) {
-			cout << "|[";
+			cout << "|";
 			cout.setf(ios::right);
 			cout.width(8);
-			cout << licensePlate << "]| |[";
+			cout << licensePlate << "| |";
 			cout.width(20);
-			cout << address << "] ---> [";
+			cout << address << " ---> ";
 			cout.unsetf(ios::right);
 			cout.width(20);
 			cout.setf(ios::left);
 			cout << location;
 			cout.unsetf(ios::left);
-			cout << "]|" << endl;
+			cout << "|" << endl;
 
 			//change the address to a new location
 			strCpy(address, location);
@@ -36,9 +36,39 @@ namespace sdds {
 
 	std::ostream& MotorVehicle::write(std::ostream& os) const
 	{
-		cout << "| [" << year << "] | [" << licensePlate << "] | [" << address << "]";
+		cout << "|";
+		cout.width(5);
+		cout << year << " | " << licensePlate << " | " << address;
 		return os;
 	}
+
+	std::istream& MotorVehicle::read(std::istream& in)
+	{
+		cout << "Built year: ";
+		in >> year;
+		while (!in || year < 0) {
+			cin.clear();
+			cin.ignore(1000, '\n');
+			cout << "Invaild input, enter another year: ";
+			cin >> year;
+		}
+
+		cout << "License plate: ";
+		in.getline(licensePlate, PLATE_NUM_SIZE);
+
+		cout << "Current location: ";
+		in.getline(address, ADDRESS_SIZE);
+
+		while (address[0] == '\0') {
+			cin.clear();
+			cin.ignore(1000, '\n');
+			cout << "Invalid input. enter another address: ";
+			cin.getline(address, ADDRESS_SIZE);
+		}
+	}
+
+
+
 
 
 
