@@ -1,6 +1,6 @@
 /*
 *****************************************************************************
-						  Workshop - #7 (P1)
+						  Workshop - #7 
 Full Name  : Mostafa Hasanalipourshahrabadi
 Student ID#: 154581227
 Email      : mhasanalipourshahrab@myseneca.ca
