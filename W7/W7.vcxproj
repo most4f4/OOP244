@@ -134,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cstring.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="MotorVehicle.cpp" />
     <ClCompile Include="Truck.cpp" />
   </ItemGroup>

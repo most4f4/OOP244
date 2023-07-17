@@ -24,6 +24,7 @@ professor provided to complete my workshops and assignments.
 #define ADDRESS_SIZE 64 // Size of the address array
 
 namespace sdds {
+
 	class MotorVehicle {
 	private:
 
@@ -40,7 +41,7 @@ namespace sdds {
 		MotorVehicle() {};
 
 		// Constructor that initializes license plate and year
-		MotorVehicle(const char* plateNumber, int vehicleYear);
+		MotorVehicle(const char* plateNumber, int vehicleYear, const char* location = "Factory");
 
 		// Moves the vehicle to a new address
 		void moveTo(const char* location);
