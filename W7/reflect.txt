@@ -1,0 +1,55 @@
+///////////////////////////////////////////////////////////////////////////
+                              Reflection
+                          Workshop - #7
+Full Name  : Mostafa Hasanalipourshahrabadi
+Student ID#: 154581227
+Email      : mhasanalipourshahrab@myseneca.ca
+Section    : NAA
+Date       : 2023-07-17
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+During this workshop and project, I learned about various concepts related 
+to inheritance and class hierarchy in object-oriented programming. One of 
+the key topics I learned was how to inherit a derived class from a base 
+class. This allows us to create specialized classes that inherit the 
+properties and behaviors of a base class while adding additional features 
+specific to the derived class.
+
+I also learned about shadowing a base class member function with a derived 
+class member function. This means that when a derived class defines a 
+function with the same name as a function in the base class, the derived 
+class function takes precedence and "shadows" the base class function. This
+allows us to override the behavior of the base class function in the derived
+class.
+
+Furthermore, I learned how to access a shadowed member function that is 
+defined in a base class. By using the scope resolution operator (::), I can
+explicitly specify the base class to access the shadowed function. This 
+allows me to use the functionality of the base class function even when it 
+is shadowed by a derived class function.
+
+Another important aspect that I explored was utilizing custom input/output 
+operators with these classes. By overloading the stream insertion (<<) and 
+extraction (>>) operators, I can define how objects of these classes are 
+formatted and displayed when used with standard input/output streams. This 
+provides flexibility and control over the input/output operations on these 
+classes.
+
+Throughout this workshop and project, I encountered a few difficulties. One 
+challenge was understanding the proper syntax and usage of the scope 
+resolution operator (::) when accessing shadowed member functions. Initially, 
+I struggled with correctly referencing the base class function from the 
+derived class. However, with guidance and practice, I was able to grasp the 
+concept and apply it effectively.
+
+In conclusion, completing this workshop and project has provided me with a 
+solid understanding of inheritance, shadowing member functions, accessing 
+shadowed functions, and utilizing custom input/output operators. I have 
+gained valuable experience in designing and implementing class hierarchies 
+and learned techniques to enhance the functionality and flexibility of my 
+code.
