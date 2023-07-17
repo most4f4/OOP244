@@ -33,10 +33,10 @@ namespace sdds {
 
     bool Truck::addCargo(double cargo)
     {
-        double weight = currentLoad + cargo;
-        if (weight <= capacity)
-        {
+
+        if (currentLoad != capacity) {
             currentLoad += cargo;
+            if (currentLoad > capacity) currentLoad = capacity;
             return true;
         }
         return false;

@@ -72,10 +72,17 @@ namespace sdds {
 		}
 
 		cout << "License plate: ";
-		in.getline(licensePlate, PLATE_NUM_SIZE);
+		in >> licensePlate;
+		while (!in) {
+			cin.clear();
+			cin.ignore(1000, '\n');
+			cout << "Invaild input, enter another plate number: ";
+			cin >> licensePlate;
+		}
+
 
 		cout << "Current location: ";
-		in.getline(address, ADDRESS_SIZE);
+		in >> address;
 
 		while (address[0] == '\0') {
 			cin.clear();

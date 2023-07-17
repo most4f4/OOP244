@@ -17,7 +17,7 @@ professor provided to complete my workshops and assignments.
 */
 
 #ifndef SDDS_MOTORVEHICLE_H_
-#define SDDS_MOTPRVEHICLE_H_
+#define SDDS_MOTORVEHICLE_H_
 #include <iostream>
 
 #define PLATE_NUM_SIZE 9 // Size of the license plate array
