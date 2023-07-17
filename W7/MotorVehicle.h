@@ -14,6 +14,9 @@ namespace sdds {
 	public:
 		MotorVehicle() {};
 		MotorVehicle(const char* plateNumber, int vehicleYear);
+		void moveTo(const char* location);
+		ostream& write(ostream& os);
+
 
 
 
