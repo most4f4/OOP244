@@ -34,7 +34,7 @@ namespace sdds {
         return false;
     }
 
-    std::ostream& Truck::write(std::ostream& os)
+    std::ostream& Truck::write(std::ostream& os) const
     {
         MotorVehicle::write(os); // Call the base class write function
         os << " | " << currentLoad << "/" << capacity;
@@ -68,7 +68,13 @@ namespace sdds {
 
     }
 
+    std::ostream& operator<<(std::ostream& os, const Truck& truck)
+    {
+        return truck.write(os);
+    }
 
-
+    std::istream& operator>>(std::istream& is, Truck& truck) {
+        return truck.read(is);
+    }
 
 }
