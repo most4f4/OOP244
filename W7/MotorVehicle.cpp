@@ -65,11 +65,18 @@ namespace sdds {
 			cout << "Invalid input. enter another address: ";
 			cin.getline(address, ADDRESS_SIZE);
 		}
+
+		return in;
 	}
 
+	std::ostream& operator<<(std::ostream& os, const MotorVehicle& vehicle)
+	{
+		return vehicle.write(os);
+	}
 
-
-
-
+	std::istream& operator>>(std::istream& in, MotorVehicle& vehicle)
+	{
+		return vehicle.read(in);
+	}
 
 }

@@ -17,12 +17,9 @@ namespace sdds {
 		void moveTo(const char* location);
 		std::ostream& write(std::ostream& os) const;
 		std::istream& read(std::istream& in);
-
-
-
-
-
 	};
+	std::ostream& operator<<(std::ostream& os, const MotorVehicle& vehicle);
+	std::istream& operator>>(std::istream& in, MotorVehicle& vehicle);
 }
 
 
