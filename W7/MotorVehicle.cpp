@@ -34,4 +34,12 @@ namespace sdds {
 		}
 	}
 
+	std::ostream& MotorVehicle::write(std::ostream& os) const
+	{
+		cout << "| [" << year << "] | [" << licensePlate << "] | [" << address << "]";
+		return os;
+	}
+
+
+
 }
