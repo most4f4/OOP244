@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\16478\Desktop\Semester2\OOP244\Git\OOP244\W7;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,10 +130,12 @@
   <ItemGroup>
     <ClInclude Include="cstring.h" />
     <ClInclude Include="MotorVehicle.h" />
+    <ClInclude Include="Truck .h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cstring.cpp" />
     <ClCompile Include="MotorVehicle.cpp" />
+    <ClCompile Include="Truck .cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

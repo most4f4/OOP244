@@ -21,12 +21,18 @@
     <ClInclude Include="cstring.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Truck .h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MotorVehicle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="cstring.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Truck .cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
