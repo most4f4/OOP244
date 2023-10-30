@@ -23,6 +23,8 @@ professor provided to complete my workshops and assignments.
 
 namespace sdds {
 
+   class TextFile; // forward declaration
+
    class Line {
       char* m_value{ nullptr };
       operator const char* () const;
@@ -30,7 +32,10 @@ namespace sdds {
       Line& operator=(const char*);
       ~Line();
       friend class TextFile;
-      // copy and copy assignment prevention goes here
+
+      // copy and copy assignment prevention
+      Line(Line&) = delete;
+      Line& operator=(const Line&) = delete;
 
    };
 
