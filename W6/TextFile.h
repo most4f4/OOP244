@@ -16,8 +16,9 @@ professor provided to complete my workshops and assignments.
 *****************************************************************************
 */
 
-#ifndef SDDS_TEXTFILE_H__
-#define SDDS_TEXTFILE_H__
+#ifndef SDDS_TEXTFILE_H_
+#define SDDS_TEXTFILE_H_
+
 #include <iostream>
 
 namespace sdds {
@@ -60,4 +61,5 @@ namespace sdds {
    std::istream& operator>>(std::istream& istr, TextFile& text);
 
 }
-#endif // !SDDS_TEXTFILE_H__
+
+#endif // !SDDS_TEXTFILE_H_
