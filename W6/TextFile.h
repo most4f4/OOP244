@@ -26,8 +26,10 @@ namespace sdds {
    class TextFile; // forward declaration
 
    class Line {
+
       char* m_value{ nullptr };
-      operator const char* () const;
+
+      operator const char* () const; //Returns the address held in the m_value attribute.
       Line() {};
       Line& operator=(const char*);
       ~Line();
