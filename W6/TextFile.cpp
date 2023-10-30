@@ -43,6 +43,17 @@ namespace sdds {
         m_value = nullptr;
     }
 
+    void TextFile::setEmpty()
+    {
+        delete[] m_textLines;
+        m_textLines = nullptr;
+
+        delete[] m_filename;
+        m_filename = nullptr;
+
+        m_noOfLines = 0;
+    }
+
     void TextFile::setFilename(const char* fname, bool isCopy)
     {
         delete[] m_filename;
@@ -114,17 +125,6 @@ namespace sdds {
             out << m_textLines[i] << endl;
         }
 
-    }
-
-    void TextFile::setEmpty()
-    {
-            delete[] m_textLines;
-            m_textLines = nullptr;
-
-            delete[] m_filename;
-            m_filename = nullptr;
-
-        m_noOfLines = 0;
     }
 
     TextFile::TextFile(unsigned pageSize)

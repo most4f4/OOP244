@@ -27,12 +27,13 @@ namespace sdds {
 
    class Line {
 
-      char* m_value{ nullptr };
+      char* m_value{ nullptr }; // initialized to nullptr
 
       operator const char* () const; //Returns the address held in the m_value attribute.
       Line() {};
       Line& operator=(const char*);
       ~Line();
+
       friend class TextFile;
 
       // copy and copy assignment prevention
@@ -46,6 +47,7 @@ namespace sdds {
       char* m_filename{ nullptr }; // initialized to nullptr
       unsigned m_noOfLines;
       unsigned m_pageSize;
+
       void setFilename(const char* fname, bool isCopy = false);
       void setNoOfLines();
       void loadText();
