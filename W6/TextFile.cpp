@@ -161,7 +161,7 @@ namespace sdds {
         m_pageSize = source.m_pageSize;
 
         //If the incoming Text object is in a valid State
-        if (source.m_textLines != nullptr && source.m_noOfLines > 0) {
+        if (source) {
 
             //Sets the file-name to the name of the incoming TextFile object (isCopy set to true)
             setFilename(source.m_filename, true);
@@ -181,7 +181,7 @@ namespace sdds {
     TextFile& TextFile::operator=(const TextFile& source)
     {
         
-        if (this != &source) {
+        if (this != &source && *this && source ) {
 
             if (m_textLines != nullptr) {
                 delete[] m_textLines;
