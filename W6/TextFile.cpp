@@ -73,25 +73,22 @@ namespace sdds {
     void TextFile::setNoOfLines()
     {
         ifstream readfile(m_filename);
-
-        if (!readfile) {
-            m_noOfLines = 0;
-            delete[] m_filename;
-            m_filename = nullptr;
-            return;
-        }
-
-        // Read the file, and accumulates the number of newlines in the m_noOfLines attribute
         m_noOfLines = 0;
         char ch;
-        while (readfile.get(ch)) {
-            if (ch == '\n') {
+
+        if (readfile) {
+            while (readfile.get(ch)) {
+                if (ch == '\n') {
+                    m_noOfLines++;
+                }
+
+                // Increase m_noOfLines by one if the last line doesn't have a newline character
                 m_noOfLines++;
             }
         }
+        else setEmpty();
 
-        // Increase m_noOfLines by one if the last line doesn't have a newline character
-          m_noOfLines++;
+        if (m_noOfLines == 0) setEmpty();
 
     }
 
