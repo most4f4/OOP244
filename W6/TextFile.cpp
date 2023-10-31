@@ -260,11 +260,12 @@ namespace sdds {
 
     const char* TextFile::operator[](unsigned index) const
     {
-        if (m_textLines == nullptr || m_noOfLines == 0) {
-            return nullptr;
+        if (*this) {
+            return m_textLines[index % m_noOfLines];
         }
-
-        return m_textLines[index % m_noOfLines];
+        else {
+            return nullptr;
+        }   
     }
 
     std::ostream& operator<<(std::ostream& ostr, const TextFile& text)
