@@ -125,10 +125,12 @@ namespace sdds {
 
     void TextFile::saveAs(const char* fileName) const
     {
-        ofstream out(fileName);
+        //Use a local ofstream object to open a new file using the name kept in the argument filename
+        ofstream newFile(fileName);
 
+        //Loop through the elements of the m_textLines array and write them in the opened file adding a new line to the end of each line.
         for (unsigned int i = 0; i < m_noOfLines; i++) {
-            out << m_textLines[i] << endl;
+            newFile << m_textLines[i] << endl;
         }
 
     }
