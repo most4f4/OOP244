@@ -202,36 +202,33 @@ namespace sdds {
 
     std::ostream& TextFile::view(std::ostream& ostr) const
     {
+        //The function performs no action if the TextFile is in an empty state.
+        if (*this) {
 
-        if (m_filename == nullptr || m_noOfLines == 0) {
-            return ostr;
-        }
+            ostr << m_filename << endl;
 
-        ostr << m_filename << endl;
+            //underline the file name with '=' character
+            for (int i = 0; i < strLen(m_filename); i++) {
+                ostr << '=';
+            }
+            ostr << endl;
 
-        //underline the file name with '=' character
-        for (int i = 0; i < strLen(m_filename); i++) {
-            ostr << '=';
-        }
-        ostr << endl;
+            int count = 0;
 
-        unsigned int lineCounter = 0;
+            // Print lines one by one
+            for (unsigned int i = 0; i < m_noOfLines; i++) {
+                ostr << m_textLines[i] << endl;
+                count++;
 
-        // Print lines one by one
-        for (unsigned int i = 0; i < m_noOfLines; i++) {
-            ostr << m_textLines[i] << endl;
-            lineCounter++;
-
-            // Pause after printing m_pageSize lines
-            if (lineCounter == m_pageSize) {
-                cout << "Hit ENTER to continue...";
-                cin.get();
-                lineCounter = 0;
+                // Pause after printing m_pageSize lines
+                if (count == m_pageSize) {
+                    cout << "Hit ENTER to continue...";
+                    cin.get();
+                    count = 0;
+                }
             }
         }
-
         return ostr;
-
     }
 
     std::istream& TextFile::getFile(std::istream& istr)
