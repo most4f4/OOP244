@@ -77,7 +77,8 @@ namespace sdds {
         char ch;
 
         if (readfile) {
-            while (readfile.get(ch)) {
+            while (readfile.get(ch))
+            {
                 if (ch == '\n') {
                     m_noOfLines++;
                 }
@@ -94,23 +95,31 @@ namespace sdds {
 
     void TextFile::loadText()
     {
-        if (m_filename == nullptr)
-            return;
+        if (m_filename != nullptr) {
 
-        delete[] m_textLines;
-        m_textLines = new Line[m_noOfLines];
+            // Ensure m_textLine is deleted to prevent memory leak
+            delete[] m_textLines;
+            m_textLines = nullptr;
 
-        ifstream readfile(m_filename);
+            // dynamically allocate an array of Lines with the size of m_noOfLines
+            m_textLines = new Line[m_noOfLines];
 
-        string line;
+            // a local instance of ifstream using the file name (m_filename) to read the lines of the text file.
+            ifstream readfile(m_filename);
 
-        unsigned int lineIndex = 0;
-        while (getline(readfile, line)) {
-            m_textLines[lineIndex] = line.c_str();
-            lineIndex++;
+            //Read the line using a local C++ string object and the getline helper function
+            string line;
+            int count = 0;
+
+            while (getline(readfile, line)) {
+
+                //set the m_textLines array elements to the values returned by the c_str() method of the string object
+                m_textLines[count] = line.c_str();
+                count++;
+            }
+
+            m_noOfLines = count;
         }
-
-        m_noOfLines = lineIndex;
         
     }
 
