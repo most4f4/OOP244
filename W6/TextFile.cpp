@@ -181,24 +181,15 @@ namespace sdds {
     TextFile& TextFile::operator=(const TextFile& source)
     {
         
-        if (this != &source && *this && source ) {
+        if (this != &source && *this && source) {
 
-            if (m_textLines != nullptr) {
-                delete[] m_textLines;
-                m_textLines = nullptr;
-            }
+            delete[] m_textLines;
+            m_textLines = nullptr;
 
-            if (source.m_textLines != nullptr && source.m_noOfLines > 0) {
-                m_noOfLines = source.m_noOfLines;
-                m_textLines = new Line[m_noOfLines];
+            source.saveAs(m_filename);
+            setNoOfLines();
+            loadText();
 
-                for (unsigned i = 0; i < m_noOfLines; i++) {
-                    m_textLines[i].m_value = new char[strLen(source.m_textLines[i].m_value) + 1];
-                    strCpy(m_textLines[i].m_value, source.m_textLines[i].m_value);
-                }
-
-                saveAs(m_filename);
-            }
         }
 
         return *this;
