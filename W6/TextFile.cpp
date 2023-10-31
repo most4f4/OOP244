@@ -154,25 +154,27 @@ namespace sdds {
 
     }
 
-    sdds::TextFile::TextFile(const TextFile& source)
+    TextFile::TextFile(const TextFile& source)
     {
         
         setEmpty();
         m_pageSize = source.m_pageSize;
 
-            if (source.m_textLines != nullptr && source.m_noOfLines > 0) {
-                setFilename(source.m_filename, true);
+        //If the incoming Text object is in a valid State
+        if (source.m_textLines != nullptr && source.m_noOfLines > 0) {
 
-                m_noOfLines = source.m_noOfLines;
-                m_textLines = new Line[m_noOfLines];
+            //Sets the file-name to the name of the incoming TextFile object (isCopy set to true)
+            setFilename(source.m_filename, true);
 
-                for (unsigned i = 0; i < m_noOfLines; i++) {
-                    m_textLines[i].m_value = new char[strLen(source.m_textLines[i].m_value) + 1];
-                    strCpy(m_textLines[i].m_value, source.m_textLines[i].m_value);
-                }
+            //Saves the content of the incoming TextFile under the file name of the current TextFile
+            source.saveAs(m_filename);
 
-                saveAs(m_filename);
-            }        
+            //set the number of lines
+            setNoOfLines();
+
+            //loads the Text 
+            loadText();
+        }        
 
     }
 
