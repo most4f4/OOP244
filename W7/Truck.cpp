@@ -65,21 +65,8 @@ namespace sdds {
         cout << "Capacity: ";
         in >> capacity;
 
-        while (!in || capacity < 0.0) {
-            cin.clear();
-            cin.ignore(1000, '\n');
-            cout << "Invaild input, enter another capacity: ";
-            cin >> capacity;
-        }
-
         cout << "Cargo: ";
         in >> currentLoad;
-        while (!in) {
-            cin.clear();
-            cin.ignore(1000, '\n');
-            cout << "Invaild input, enter another cargo weight: ";
-            cin >> currentLoad;
-        }
 
         return in;
 
