@@ -29,19 +29,20 @@ namespace sdds {
 	private:
 
 		// License plate number of the vehicle
-		char licensePlate[PLATE_NUM_SIZE]{ '\0' };
+		char licensePlate[PLATE_NUM_SIZE]{ '\0' }; // initialized to nullptr
 
 		// Address where the vehicle is located
-		char address[ADDRESS_SIZE]{ '\0' };
+		char address[ADDRESS_SIZE]{ '\0' }; // initialized to nullptr
 
 		// Year when the vehicle was built
-		int year{ 0 };
+		int year{ 0 }; // initialized to zero
 
 	public:
 		MotorVehicle() {};
 
 		// Constructor that initializes license plate and year
-		MotorVehicle(const char* plateNumber, int vehicleYear, const char* location = "Factory");
+		// No validation required.
+		MotorVehicle(const char* plateNumber, int vehicleYear);
 
 		// Moves the vehicle to a new address
 		void moveTo(const char* location);
