@@ -23,6 +23,7 @@ professor provided to complete my workshops and assignments.
 
 
 namespace sdds {
+
 	class Truck : public MotorVehicle {
 	
 	private:
