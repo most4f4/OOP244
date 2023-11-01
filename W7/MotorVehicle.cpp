@@ -23,11 +23,11 @@ professor provided to complete my workshops and assignments.
 
 using namespace std;
 namespace sdds {
-	MotorVehicle::MotorVehicle(const char* plateNumber, int vehicleYear, const char* location)
+	MotorVehicle::MotorVehicle(const char* plateNumber, int vehicleYear)
 	{
 		strCpy(licensePlate, plateNumber);
-		strCpy(address, location);
 		year = vehicleYear;
+		strCpy(address, "Factory");
 	}
 
 	void MotorVehicle::moveTo(const char* location)
