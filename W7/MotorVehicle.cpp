@@ -64,32 +64,21 @@ namespace sdds {
 	{
 		cout << "Built year: ";
 		in >> year;
-		while (!in || year < 0) {
-			cin.clear();
-			cin.ignore(1000, '\n');
-			cout << "Invaild input, enter another year: ";
-			cin >> year;
-		}
+		// Discard up to 1000 characters or until a newline character ('\n') is encountered
+		in.ignore(1000, '\n');
+		// Clear the error state flags of the input stream
+		in.clear();
+
 
 		cout << "License plate: ";
-		in >> licensePlate;
-		while (!in) {
-			cin.clear();
-			cin.ignore(1000, '\n');
-			cout << "Invaild input, enter another plate number: ";
-			cin >> licensePlate;
-		}
-
+		// Reads a line of text from the input stream in
+		// Up to a maximum of PLATE_NUM_SIZE - 1 characters
+		// Stop reading at the newline character '\n'.
+		// Store it in the character array licensePlate
+		in.getline(licensePlate, PLATE_NUM_SIZE, '\n');
 
 		cout << "Current location: ";
-		in >> address;
-
-		while (address[0] == '\0') {
-			cin.clear();
-			cin.ignore(1000, '\n');
-			cout << "Invalid input. enter another address: ";
-			cin.getline(address, ADDRESS_SIZE);
-		}
+		in.getline(address, ADDRESS_SIZE, '\n');
 
 		return in;
 	}
