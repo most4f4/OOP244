@@ -34,6 +34,9 @@ namespace sdds {
 	{
 		//check if the new address is different from the current address
 		if (strCmp(address, location) != 0) {
+			//change the address to a new location
+			strCpy(address, location);
+			
 			cout << "|";
 			cout.setf(ios::right);
 			cout.width(8);
@@ -46,17 +49,14 @@ namespace sdds {
 			cout << location;
 			cout.unsetf(ios::left);
 			cout << "|" << endl;
-
-			//change the address to a new location
-			strCpy(address, location);
 		}
 	}
 
 	std::ostream& MotorVehicle::write(std::ostream& os) const
 	{
-		cout << "|";
-		cout.width(5);
-		cout << year << " | " << licensePlate << " | " << address;
+		os << "|";
+		os.width(5);
+		os << year << " | " << licensePlate << " | " << address;
 		return os;
 	}
 
