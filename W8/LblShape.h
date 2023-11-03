@@ -8,13 +8,23 @@ namespace sdds {
 
 	class LblShape : public Shape {
 
-		char* m_label{};
+		char* m_label{}; // initialized to nullptr by default 
 
 	protected:
 
-		const char* lable() const;
+		const char* label() const;
 
-	};
+	public:
+
+		LblShape();
+
+		LblShape(const char* label);
+
+		virtual ~LblShape();
+
+		
+
+	}; 
 
 }
 
