@@ -151,8 +151,8 @@
     <ClInclude Include="Shape.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\W7\main.cpp" />
     <ClCompile Include="LblShape.cpp" />
+    <ClCompile Include="mainn.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="Shape.cpp" />
   </ItemGroup>
