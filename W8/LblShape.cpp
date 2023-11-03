@@ -24,5 +24,11 @@ namespace sdds {
 
 	}
 
+	LblShape::~LblShape()
+	{
+		delete[] m_label;
+		m_label = nullptr;
+	}
+
 }
 
