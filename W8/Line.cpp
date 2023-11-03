@@ -33,7 +33,7 @@ namespace sdds {
 	void Line::draw(std::ostream& os) const
 	{
 		if (m_length > 0 && LblShape::label() != nullptr) {
-			os << label() << endl;
+			os << LblShape::label() << endl;
 
 			for (int i = 0; i < m_length; i++) {
 				os << '=';
