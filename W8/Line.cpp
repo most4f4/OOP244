@@ -7,4 +7,9 @@ namespace sdds {
 
 
 
+	Line::Line() : LblShape()
+	{
+		m_length = 0;
+	}
+
 }
