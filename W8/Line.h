@@ -13,7 +13,7 @@ namespace sdds{
 
 		Line();
 
-
+		Line(const char* str, int length);
 
 	};
 
