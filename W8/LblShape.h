@@ -8,7 +8,7 @@ namespace sdds {
 
 	class LblShape : public Shape {
 
-		char* m_label{}; // initialized to nullptr by default 
+		char* m_label{nullptr}; 
 
 	protected:
 
@@ -16,7 +16,7 @@ namespace sdds {
 
 	public:
 
-		LblShape();
+		LblShape() {};
 
 		LblShape(const char* label);
 

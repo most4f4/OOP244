@@ -150,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LblShape.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="Shape.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
