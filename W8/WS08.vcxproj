@@ -145,6 +145,9 @@
   <ItemGroup>
     <ClInclude Include="Shape.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Shape.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
