@@ -45,6 +45,7 @@ namespace sdds {
         os.width(m_width - 1);
         os.fill('-');
         os << '+' << endl;
+        os.fill(' ');
         os.unsetf(ios::right);
 
         //second line
