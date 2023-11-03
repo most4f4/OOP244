@@ -16,6 +16,8 @@ namespace sdds {
 		
 		Rectangle();
 
+		Rectangle(const char* label, int width, int height);
+
 	};
 
 }
