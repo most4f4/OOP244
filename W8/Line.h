@@ -15,6 +15,8 @@ namespace sdds{
 
 		Line(const char* str, int length);
 
+		void getSpecs(std::istream& is);
+
 	};
 
 }

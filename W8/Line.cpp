@@ -19,4 +19,15 @@ namespace sdds {
 		}
 	}
 
+	void Line::getSpecs(std::istream& is)
+	{
+		LblShape::getSpecs(is);
+
+		is >> m_length;
+
+		is.ignore(1000, '\n');
+		// while (is.get() != '\n') {}
+		
+	}
+
 }
