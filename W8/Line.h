@@ -17,6 +17,8 @@ namespace sdds{
 
 		void getSpecs(std::istream& is);
 
+		void draw(std::ostream& os) const;
+
 	};
 
 }
