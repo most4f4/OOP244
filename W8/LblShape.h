@@ -28,8 +28,6 @@ namespace sdds {
 
 		void getSpecs(std::istream& is);
 		
-
-
 	}; 
 
 }

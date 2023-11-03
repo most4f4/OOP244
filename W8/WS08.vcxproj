@@ -145,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LblShape.h" />
+    <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Shape.h" />
   </ItemGroup>
   <ItemGroup>
