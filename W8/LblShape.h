@@ -22,7 +22,13 @@ namespace sdds {
 
 		virtual ~LblShape();
 
+		LblShape(const LblShape& source) = delete;
+
+		LblShape& operator=(const LblShape& source) = delete;
+
+		void getSpecs(std::istream& is);
 		
+
 
 	}; 
 
