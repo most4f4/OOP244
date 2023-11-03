@@ -37,4 +37,39 @@ namespace sdds {
 
     }
 
+    void Rectangle::draw(std::ostream& os) const
+    {
+        //first line
+        os << '+';
+        os.setf(ios::right);
+        os.width(m_width - 1);
+        os.fill('-');
+        os << '+' << endl;
+        os.unsetf(ios::right);
+
+        //second line
+        os << '|';
+        os.setf(ios::left);
+        os.width(m_width - 2);
+        os << label() << '|' << endl;
+
+        //next (m_height - 3) lines
+        for (int i = 0; i < m_height - 3; i++) {
+            os << '|';
+            os.setf(ios::right);
+            os.width(m_width - 1);
+            os.fill(' ');
+            os << '|' << endl;
+            os.unsetf(ios::right);
+        }
+
+        //last line
+        os << '+';
+        os.setf(ios::right);
+        os.width(m_width - 1);
+        os.fill('-');
+        os << '+' << endl;
+        os.unsetf(ios::right);
+    }
+
 }

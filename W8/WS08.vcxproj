@@ -121,6 +121,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>main.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\16478\Desktop\Semester2\OOP244\Git\OOP244\W8\x64\Debug\main.obj;C:\Users\16478\Desktop\Semester2\OOP244\Git\OOP244\W8\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -149,6 +151,7 @@
     <ClInclude Include="Shape.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\W7\main.cpp" />
     <ClCompile Include="LblShape.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="Shape.cpp" />
