@@ -18,6 +18,8 @@ namespace sdds {
 
 		Rectangle(const char* label, int width, int height);
 
+		void getSpecs(std::istream& is);
+
 	};
 
 }

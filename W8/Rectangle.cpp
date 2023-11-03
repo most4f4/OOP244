@@ -25,4 +25,16 @@ namespace sdds {
         }
     }
 
+    void Rectangle::getSpecs(std::istream& is)
+    {
+        LblShape::getSpecs(is);
+
+        is >> m_width;
+        is.ignore(); // ignore the separator
+        is >> m_height;
+
+        is.ignore(1000, '\n');
+
+    }
+
 }
