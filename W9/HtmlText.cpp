@@ -48,4 +48,62 @@ namespace sdds {
 		return *this;
 		
 	}
+
+	void HtmlText::write(std::ostream& os) const
+	{
+		// Boolean variable to keep track of multiple spaces (MS for Multiple Spaces)
+		bool MS = false;
+
+		os << "<html><head><title>";
+
+		(m_title != nullptr) ? os << m_title : os << "No title";
+
+		os << "</title></head>\n<body>\n";
+
+		if (m_title) {
+			os << "<h1>" << m_title << "</h1>\n";
+		}
+
+		// Loop through the characters of the m_content and convert special characters to HTML entities
+		int index = 0;
+		char ch;
+
+		while (Text::operator[](index) != '\0') {
+
+			ch = operator[](index);
+
+			switch (ch)
+			{
+			case ' ':
+				if (MS) os << "&nbsp;";
+				else {
+					os << ' ';
+					MS = true;
+				}
+				break;
+			case '<':
+				os << "&lt;";
+				MS = false;
+				break;
+			case '>':
+				os << "&gt;";
+				MS = false;
+				break;
+			case '\n':
+				os << "<br />\n";
+				MS = false;
+				break;
+			default:
+				os << ch;
+				MS = false;
+				break;;
+			}
+
+			index++;
+
+		}
+
+		os << "</body>\n</html>";
+
+	}
 }

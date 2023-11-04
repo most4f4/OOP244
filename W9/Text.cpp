@@ -57,7 +57,8 @@ namespace sdds {
    Text::Text(const Text& src)
    {
        // Uses the assignment operator to perform a deep copy of the content.
-       *this = src; 
+       *this = src;
+       // operator=(src)
    }
 
    Text& Text::operator=(const Text& src)
