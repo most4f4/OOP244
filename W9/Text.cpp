@@ -70,4 +70,21 @@ namespace sdds {
 
    }
 
+   Text::Text(const char* filename)
+   {
+       if (filename) {
+
+           m_filename = new char[strlen(filename) + 1];
+           strcpy(m_filename, filename);
+
+           read();
+
+       } 
+   }
+
+   std::ostream& operator<<(std::ostream& leftOperand, const Text& rightOperand)
+   {
+       // TODO: insert return statement here
+   }
+
 }
