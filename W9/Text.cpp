@@ -48,6 +48,11 @@ namespace sdds {
 
    }
 
+   const char& Text::operator[](int index) const
+   {
+       return m_content[index];
+   }
+
    Text::Text(const Text& src)
    {
        *this = src; 
@@ -98,6 +103,15 @@ namespace sdds {
            read();
 
        } 
+   }
+
+   void Text::read()
+   {
+
+       if (m_content) delete[] m_content;
+
+       m_content = new char[strLen(getFileLength()) + 1];
+
    }
 
    void Text::write(std::ostream& os) const
