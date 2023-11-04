@@ -140,11 +140,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="cstring.h" />
+    <ClInclude Include="HtmlText.h" />
     <ClInclude Include="Text.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cstring.cpp" />
-    <ClCompile Include="Text-tester.cpp" />
+    <ClCompile Include="HtmlText.cpp" />
     <ClCompile Include="Text.cpp" />
   </ItemGroup>
   <ItemGroup>
