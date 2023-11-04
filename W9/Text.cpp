@@ -8,18 +8,24 @@ namespace sdds {
 
    int Text::getFileLength() const {
 
+       // Initialize the variable to store the file length.
       int len = 0;
 
+      // Open the input file stream with the specified filename.
       ifstream fin(m_filename);
 
+      // Loop until the end of the file is reached.
       while (fin) {
 
+         // Attempt to read a character from the file.
          fin.get();
 
+         // Check if the read operation was successful (fin is true) and increment len by 1.
          len += !!fin;
 
       }
 
+      // Close the file stream and return the total number of characters read.
       return len;
 
    }
