@@ -26,11 +26,13 @@ namespace sdds {
        virtual ~Text();
 
       Text(const char* filename=nullptr);
+
       void read();
+
       virtual void write(std::ostream& os)const;
 
    };
 
-}
-#endif // !SDDS_PERSON_H__
+   std::ostream& operator<<(std::ostream& leftOperand, const Text& rightOperand);
 
+#endif

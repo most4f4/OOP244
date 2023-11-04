@@ -84,7 +84,8 @@ namespace sdds {
 
    std::ostream& operator<<(std::ostream& leftOperand, const Text& rightOperand)
    {
-       // TODO: insert return statement here
+       rightOperand.write(leftOperand);
+       return leftOperand;
    }
 
 }
