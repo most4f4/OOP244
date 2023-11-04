@@ -50,18 +50,19 @@ namespace sdds {
 
    const char& Text::operator[](int index) const
    {
-       // Return the character at the specified index in the m_content array.
+       // Returns the character at the specified index in the m_content array.
        return m_content[index];
    }
 
    Text::Text(const Text& src)
    {
-       // This uses the assignment operator to perform a deep copy of the content.
+       // Uses the assignment operator to perform a deep copy of the content.
        *this = src; 
    }
 
    Text& Text::operator=(const Text& src)
    {
+       // Check for self-assignment
        if (this != &src) {
 
            delete[] m_filename;
@@ -80,8 +81,9 @@ namespace sdds {
                strCpy(m_content, src.m_content);
            }
 
-           return *this;
        }
+
+       return *this;
 
    }
    

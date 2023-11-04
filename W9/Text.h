@@ -37,13 +37,13 @@ namespace sdds {
 
     public:
 
-        Text(const Text&);
+        Text(const Text&); // Copy constructor
 
-        Text& operator=(const Text&);
+        Text& operator=(const Text&); //Copy assignment constructor
 
-        virtual ~Text();
+        virtual ~Text(); //Destructor
 
-        Text(const char* filename = nullptr);
+        Text(const char* filename = nullptr); //One-argument constructor
 
         void read();
 
