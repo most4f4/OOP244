@@ -19,9 +19,13 @@ namespace sdds {
 
    public:
 
+       Text(const Text&);
+
+       Text& operator=(const Text&);
+
+       virtual ~Text();
+
       Text(const char* filename=nullptr);
-
-
       void read();
       virtual void write(std::ostream& os)const;
 
