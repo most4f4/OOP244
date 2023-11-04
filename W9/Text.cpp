@@ -1,5 +1,5 @@
 #include <fstream>
-#include <cstring>
+#include "cstring.h"
 #include "Text.h"
 
 using namespace std;
@@ -46,13 +46,13 @@ namespace sdds {
            m_content = nullptr;
 
            if (src.m_filename) {
-               m_filename = new char[strlen(src.m_filename) + 1];
-               strcpy(m_filename, src.m_filename);
+               m_filename = new char[strLen(src.m_filename) + 1];
+               strCpy(m_filename, src.m_filename);
            }
 
            if (src.m_content) {
-               m_content = new char[strlen(src.m_content) + 1];
-               strcpy(m_content, src.m_content);
+               m_content = new char[strLen(src.m_content) + 1];
+               strCpy(m_content, src.m_content);
            }
 
            return *this;
@@ -74,12 +74,21 @@ namespace sdds {
    {
        if (filename) {
 
-           m_filename = new char[strlen(filename) + 1];
-           strcpy(m_filename, filename);
+           m_filename = new char[strLen(filename) + 1];
+           strCpy(m_filename, filename);
 
            read();
 
        } 
+   }
+
+   void Text::write(std::ostream& os) const
+   {
+
+       if (m_content) {
+           os << m_content;
+       }
+
    }
 
    std::ostream& operator<<(std::ostream& leftOperand, const Text& rightOperand)

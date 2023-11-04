@@ -5,34 +5,35 @@
 
 namespace sdds {
 
-   class Text {
+    class Text {
 
-       char* m_filename{ nullptr }; // Hold the name of the file dynamically
+        char* m_filename{ nullptr }; // Hold the name of the file dynamically
 
-       char* m_content{ nullptr }; // Holds the content of the text file dynamically. 
+        char* m_content{ nullptr }; // Holds the content of the text file dynamically. 
 
-      int getFileLength()const; // Provides read-only access to the content of the text
+        int getFileLength()const; // Provides read-only access to the content of the text
 
-   protected:
+    protected:
 
-      const char& operator[](int index)const;
+        const char& operator[](int index)const;
 
-   public:
+    public:
 
-       Text(const Text&);
+        Text(const Text&);
 
-       Text& operator=(const Text&);
+        Text& operator=(const Text&);
 
-       virtual ~Text();
+        virtual ~Text();
 
-      Text(const char* filename=nullptr);
+        Text(const char* filename = nullptr);
 
-      void read();
+        void read();
 
-      virtual void write(std::ostream& os)const;
+        virtual void write(std::ostream& os)const;
 
-   };
+    };
 
-   std::ostream& operator<<(std::ostream& leftOperand, const Text& rightOperand);
+    std::ostream& operator<<(std::ostream& leftOperand, const Text& rightOperand);
 
+}
 #endif
