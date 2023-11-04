@@ -50,11 +50,13 @@ namespace sdds {
 
    const char& Text::operator[](int index) const
    {
+       // Return the character at the specified index in the m_content array.
        return m_content[index];
    }
 
    Text::Text(const Text& src)
    {
+       // This uses the assignment operator to perform a deep copy of the content.
        *this = src; 
    }
 
@@ -107,11 +109,45 @@ namespace sdds {
 
    void Text::read()
    {
+       if (m_filename) {
 
-       if (m_content) delete[] m_content;
+           ifstream file(m_filename);
 
-       m_content = new char[strLen(getFileLength()) + 1];
+           int size = getFileLength();
 
+           if (size > 0 && file.is_open()) {
+
+               m_content = new char[size+1];
+
+               // Temporary variable to store characters read from the file
+               char ch;
+
+               int i=0;
+
+               // Read characters from the file and store them in the m_content array.
+               while (file.get(ch)) {
+                   m_content[i] = ch;
+                   i++;
+               }
+
+               
+               m_content[i] = '\0';
+
+           }
+           else {
+
+               // If the file is empty or cannot be opened, set m_content to nullptr.
+               m_content = nullptr;
+
+           }
+
+           file.close();
+
+       }
+       else {
+           // If the filename is invalid (null), set m_content to nullptr.
+           m_content = nullptr;
+       }
    }
 
    void Text::write(std::ostream& os) const

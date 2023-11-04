@@ -29,11 +29,11 @@ namespace sdds {
 
         char* m_content{ nullptr }; // Holds the content of the text file dynamically. 
 
-        int getFileLength()const; // Provides read-only access to the content of the text
+        int getFileLength()const; // Returns the length (size) of the text file on the disk
 
     protected:
 
-        const char& operator[](int index)const;
+        const char& operator[](int index)const; //Provides read-only access to the content of the text
 
     public:
 
