@@ -17,4 +17,35 @@ namespace sdds {
 		}
 
 	}
+
+	HtmlText::~HtmlText()
+	{
+		delete[] m_title;
+		m_title = nullptr;
+	}
+
+	HtmlText::HtmlText(const HtmlText& src)
+	{
+		*this = src;
+	}
+
+	HtmlText& HtmlText::operator=(const HtmlText& src)
+	{
+		if (this != &src) {
+
+			Text::operator=(src);
+			// (Text&)*this = src;
+			
+			delete[] m_title;
+			m_title = nullptr;
+			
+			if (src.m_title) {
+				m_title = new char[strLen(src.m_title) + 1];
+				strCpy(m_title, src.m_title);
+			}
+		}
+
+		return *this;
+		
+	}
 }
