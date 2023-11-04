@@ -13,6 +13,14 @@ namespace sdds {
 
       HtmlText(const char* filename=nullptr, const char* title = nullptr);
 
+      virtual ~HtmlText();
+
+      HtmlText(const HtmlText&);
+
+      HtmlText& operator=(const HtmlText&);
+
+      void write(std::ostream& os)const;
+
    };
 }
 #endif // !SDDS_HTMLTEXT_H__
