@@ -29,6 +29,9 @@
     <ClCompile Include="cstring.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Text-tester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="test.txt">
