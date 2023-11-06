@@ -25,8 +25,7 @@ namespace sdds {
 	/// Requirements:
 	/// 1- The == operator must be defined for objects of type T1 and T2.
 	/// 2- The Collection class must have a member function named add that adds an object of type T1.
-
-	/// 
+	///
 	template <typename T1, typename T2>
 	bool search(Collection<T1>& obj, const T1* arr, int numElements, T2 key) {
 		
@@ -38,9 +37,9 @@ namespace sdds {
 				obj.add(arr(i)); // REQUIREMENT 2
 			}
 		}
+
 		return result;
 	}
-
 	
 	/// <summary>
 	/// This function prints the provided title in the fist line and in following lines
@@ -55,10 +54,7 @@ namespace sdds {
 	/// Requirements:
 	/// The insertion operator << must be defined for objects of type to enable printing 
 	/// elements using cout.
-	/// 
-	/// 
-	/// 
-	/// 
+	///
 	template <typename T>
 	void listArrayElements(const char* title, const T* arr, int numElements) {
 
@@ -70,9 +66,6 @@ namespace sdds {
 
 	}
 
-
-
 }
-
 
 #endif // !SDDS_SEARCHNLIST_H__
