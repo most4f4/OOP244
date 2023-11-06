@@ -7,6 +7,7 @@
 #include "Student.h"
 #include "Employee.h"
 
+using namespace std;
 namespace sdds {
 
 	/// <summary>
@@ -30,14 +31,14 @@ namespace sdds {
 	/// 2- The Collection class must have a member function named add that adds an object of type T1.
 	///
 	template <typename T1, typename T2>
-	bool search(Collection<T1>& obj, const T1* arr, int numElements, T2 key) {
+	bool search(Collection<T1>& obj, T1 arr[], int numElements, T2 key) {
 		
 		bool result = false;
 
 		for (int i = 0; i < numElements; i++) {
 			if (arr[i] == key) { // REQUIREMENT 1 
 				result = true;
-				obj.add(arr(i)); // REQUIREMENT 2
+				obj.add(arr[i]); // REQUIREMENT 2
 			}
 		}
 
@@ -59,7 +60,7 @@ namespace sdds {
 	/// elements using cout.
 	///
 	template <typename T>
-	void listArrayElements(const char* title, const T* arr, int numElements) {
+	void listArrayElements(const char* title, const T arr[], int numElements) {
 
 		cout << title << endl;
 
