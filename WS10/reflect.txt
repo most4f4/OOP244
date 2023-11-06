@@ -1,0 +1,33 @@
+///////////////////////////////////////////////////////////////////////////
+                              Reflection
+                          Workshop - #10
+Full Name  : Mostafa Hasanalipourshahrabadi
+Student ID#: 154581227
+Email      : mhasanalipourshahrab@myseneca.ca
+Section    : NAA
+Date       : 2023-11-06
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+
+Working on this assignment allowed me to learn more about function templates. 
+Think of function templates as reusable templates for functions that can work
+with different types of data. It's like having a blueprint for a function that
+can handle various kinds of information without having to rewrite the same 
+code over and over again.
+
+I had to make sure I understood how to create these templates correctly, 
+including the syntax and how to use them with different types of data. I faced
+some challenges along the way, like figuring out the right way to write the 
+templates and fix errors that popped up. Also, I had to make sure the templates
+could work smoothly with existing code and classes.
+
+In the end, I not only learned how to use function templates effectively, but 
+I also gained a better understanding of how to write code that's flexible, easy
+to reuse, and adaptable to different situations. This experience helped me 
+improve my problem-solving skills and gave me confidence in my ability to work 
+with this important programming concept.
