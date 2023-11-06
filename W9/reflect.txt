@@ -1,11 +1,11 @@
 ///////////////////////////////////////////////////////////////////////////
                               Reflection
-                          Workshop - #5 (P2)
+                          Workshop - #9
 Full Name  : Mostafa Hasanalipourshahrabadi
 Student ID#: 154581227
 Email      : mhasanalipourshahrab@myseneca.ca
 Section    : NAA
-Date       : 2023-06-16
+Date       : 2023-11-04
 
 Authenticity Declaration:
 I declare this submission is the result of my own work and has not been
@@ -13,35 +13,31 @@ shared with any other student or 3rd party content provider. This submitted
 piece of work is entirely of my own creation.
 ///////////////////////////////////////////////////////////////////////////
 
-During this workshop, I have gained a good understanding of several important
-topics related to operator overloading in C++. I have successfully learned how 
-to define and create binary member operators, which allow me to perform custom 
-operations between two objects of the class.
 
-Furthermore, I have also learned how to define and create type conversion 
-operators, which enable me to convert objects of my class to primitive types or 
-other user-defined types. This feature provides flexibility and convenience when 
-working with different data types.
+In completing this workshop, I learned and used several key concepts and 
+techniques in object oriented programming.
+One of the fundamental principles I applied was the Rule of Three when 
+derived classes with resources are concerned, which emphasizes the 
+importance of defining a custom destructor, copy constructor, and copy 
+assignment operator when a class manages dynamically allocated memory. 
+Implementing this rule, especially in the context of derived classes, 
+provided me with a better understanding of resource management in 
+object-oriented programming.
 
-In addition, I have explored unary member operators, which allow me to perform 
-operations on a single object of the class. This is useful for implementing 
-various operations that involve only one operand.
+Another significant milestones in the project was the ability to effectively
+read a file into dynamically allocated memory. 
+By utilizing the C++ standard library classes like ifstream, getline, and 
+dynamically allocated arrays, I implemented a mechanism to load the content 
+of a text file. This process required careful consideration of memory 
+allocation, deallocation, and handling special characters within the file.
 
-Moreover, I have learned how to define and create helper binary operators 
-between classes. This allows me to define custom operations between objects of 
-different classes, which enhances the versatility and reusability of my code.
+One challenge I encountered was understanding the intricacies of deep copying
+and memory management. Implementing the Rule of Three, especially in a derived
+class, required meticulous attention to detail. Ensuring that dynamically 
+allocated memory is properly copied, released, and preventing memory leaks 
+required careful consideration of every code snippet.
 
-Lastly, I have successfully defined and created helper operators between 
-primitive types and my class. This means that I can perform operations between 
-objects of my class and primitive types like integers, doubles, or characters, 
-making my code more intuitive and easy to use.
-
-Throughout the workshop, I encountered a few challenges. One difficulty I faced 
-was ensuring that my operator implementations handled invalid states properly. 
-For example, when dealing with marks outside the range of 0 to 100, I had to 
-ensure that the mark was set to an invalid state and that any operations 
-involving invalid marks were handled correctly.
-
-Overall, this workshop has provided me with valuable knowledge and skills in 
-operator overloading in C++. I now feel confident in my ability to define and 
-create various operators, allowing for more expressive and efficient code.
+This workshop and the associated project were useful in reinforcing my 
+understanding of C++ principles. The experience of implementing the rule of
+three, working with file I/O, and processing characters for HTML conversion
+expanded my knowledge base. 
