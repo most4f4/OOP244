@@ -1,0 +1,49 @@
+///////////////////////////////////////////////////////////////////////////
+                              Reflection
+                          Workshop - #8
+Full Name  : Mostafa Hasanalipourshahrabadi
+Student ID#: 154581227
+Email      : mhasanalipourshahrab@myseneca.ca
+Section    : NAA
+Date       : 2023-11-02
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+During this workshop I had to demonstrate the ability to define pure virtual 
+functions. Understanding the concept of pure virtual functions and their role
+in abstract classes was important. 
+Here, it allowed me to design flexible and extensible class hierarchies, where
+derived classes must implement these virtual functions, ensuring a specific 
+behavior while maintaining a unified interface.
+
+Creating abstract base classes was another significant aspect of the workshop. 
+I learned how abstract classes serve as blueprints for derived classes, 
+providing a common interface while allowing customization through virtual 
+functions.
+
+Implementing behavior using virtual functions was a central theme of the 
+workshop. I learned the power of polymorphism, enabling objects of different
+classes to be treated uniformly through their base class pointers. This dynamic
+binding mechanism not only enhanced the readability of the code but also 
+facilitated code maintenance by allowing easy modifications in derived classes.
+
+Understanding the distinction between an abstract base class and a concrete 
+class was very crucial. I learned that an abstract base class contains one or 
+more pure virtual functions, making it incomplete and unsuitable for 
+instantiation. In contrast, concrete classes provide implementations for all 
+inherited virtual functions, making them complete and ready for object creation.
+
+Reflecting on this workshop, I acknowledge facing difficulties in initially 
+grasping the concept of pure virtual functions and their implementation in 
+abstract classes. However, I thankfully overcame these challenges. The process
+not only honed my problem-solving skills but also reinforced the significance 
+of persistence in mastering complex programming paradigms.
+
+In conclusion, this workshop enhanced my proficiency in the ability to create 
+abstract classes, implement polymorphic behavior, and distinguish between 
+abstract and concrete classes, all of which skills I am confident that ill prove
+invaluable in my future endeavors.
