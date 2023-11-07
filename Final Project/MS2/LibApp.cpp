@@ -50,7 +50,7 @@ namespace sdds {
 		int result = confirm("Add this publication to library?");
 		if (result) {
 			m_changed = true;
-			cout << "Publication added";
+			cout << "Publication added" << endl;
 		}
 
 	}
@@ -65,5 +65,59 @@ namespace sdds {
 		}
 	}
 
+	void LibApp::checkOutPub() {
+		search();
+		int result = confirm("Check out publication?");
+		if (result) {
+			m_changed = true;
+			cout << "Publication checked out" << endl;
+		}
+	}
+
+	void LibApp::run()
+	{
+		bool stayFlag = true;
+
+		do {
+			int userSelection = m_mainMenu.run();
+			switch (userSelection)
+			{
+			case 1:
+				newPublication();
+				break;
+			case 2:
+				removePublication();
+				break;
+			case 3:
+				checkOutPub();
+				break;
+			case 4:
+				returnPub();
+
+			default: // case 0:
+				if (m_changed) {
+					int exitSelection = m_exitMenu.run();
+					switch (exitSelection)
+					{
+					case 1:
+						save();
+						stayFlag = false;
+						break;
+					case 2:
+						break;
+					default: //case 0:
+						if (confirm("This will discard all the changes are you sure ?")) {
+							stayFlag = false;
+						}
+						break;
+					}
+				}
+				break;
+			}
+
+		} while (stayFlag);
+		
+
+	}
 
 }

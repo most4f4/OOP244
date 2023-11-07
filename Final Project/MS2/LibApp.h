@@ -16,14 +16,14 @@ namespace sdds {
        void save();  
        void search();  
        void returnPub();  
-
        void newPublication();
        void removePublication();
        void checkOutPub();
 
    public:
-       LibApp();
 
+       LibApp();
+       void run();
    };
 }
 
