@@ -33,4 +33,10 @@ namespace sdds {
 		cout << "Saving Data" << endl;
 	}
 
+	void LibApp::search() {
+		cout << "Searching for publication" << endl;
+	}
+
+
+
 }
