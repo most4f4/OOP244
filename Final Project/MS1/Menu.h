@@ -50,7 +50,7 @@ namespace sdds {
 
 		// Deleted copy constructor and copy assignment operator to prevent copying
 		MenuItem(const MenuItem&) = delete;
-		void operator=(const MenuItem&) = delete;
+		MenuItem& operator=(const MenuItem&) = delete;
 
 		// Bool and const char* type conversion 
 		operator bool() const;     
