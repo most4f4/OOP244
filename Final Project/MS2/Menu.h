@@ -12,7 +12,7 @@
 /////////////////////////////////////////////////////////////////
 /*
 *****************************************************************
-						  Final project milestone 1
+						  Final project milestone 2
 Full Name  : Mostafa Hasanalipourshahrabadi
 Student ID#: 154581227
 Email      : mhasanalipourshahrab@myseneca.ca
