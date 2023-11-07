@@ -74,12 +74,9 @@ namespace sdds {
       int currentYear()const;         // returns the m_CUR_YEAR value;
       
       int getDaysSince0001_1_1()const; 
-
       std::istream& read(std::istream& is = std::cin);
       std::ostream& write(std::ostream& os = std::cout)const;
-
       operator bool() const;
-
 
    };
    std::ostream& operator<<(std::ostream& os, const Date& RO);

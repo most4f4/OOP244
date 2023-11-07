@@ -105,11 +105,11 @@ namespace sdds {
       return m_ErrorCode != 0;
    }
   
-   ostream& operator<<(ostream& os, const Date& RO) {
-      return RO.write(os);
+   ostream& operator<<(ostream& os, const Date& rightOperand) {
+      return rightOperand.write(os);
    }
-   istream& operator>>(istream& is, Date& RO) {
-      return RO.read(is);
+   istream& operator>>(istream& is, Date& rightOperand) {
+      return rightOperand.read(is);
    }
 
    /*============================= MY CODE ==============================*/
@@ -161,9 +161,39 @@ namespace sdds {
        return !bad();
    }
 
+   bool operator==(const Date& leftOperand, const Date& rightOperand)
+   {
+       return leftOperand.getDaysSince0001_1_1() == rightOperand.getDaysSince0001_1_1();
+   }
 
-   
+   bool operator!=(const Date& leftOperand, const Date& rightOperand)
+   {
+       return leftOperand.getDaysSince0001_1_1() != rightOperand.getDaysSince0001_1_1();
+   }
 
+   bool operator>=(const Date& leftOperand, const Date& rightOperand)
+   {
+       return leftOperand.getDaysSince0001_1_1() >= rightOperand.getDaysSince0001_1_1();
+   }
 
+   bool operator<=(const Date& leftOperand, const Date& rightOperand)
+   {
+       return leftOperand.getDaysSince0001_1_1() <= rightOperand.getDaysSince0001_1_1();
+   }
+
+   bool operator>(const Date& leftOperand, const Date& rightOperand)
+   {
+       return leftOperand.getDaysSince0001_1_1() > rightOperand.getDaysSince0001_1_1();
+   }
+
+   bool operator<(const Date& leftOperand, const Date& rightOperand)
+   {
+       return leftOperand.getDaysSince0001_1_1() < rightOperand.getDaysSince0001_1_1();
+   }
+
+   bool operator-(const Date& leftOperand, const Date& rightOperand)
+   {
+       return leftOperand.getDaysSince0001_1_1() - rightOperand.getDaysSince0001_1_1();
+   }
 
 }
