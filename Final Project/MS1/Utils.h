@@ -35,7 +35,5 @@ namespace sdds {
 
 	int getUserInt(const int min, const int max);
 
-
-
 }
 #endif // SDDS_UTILS_H__

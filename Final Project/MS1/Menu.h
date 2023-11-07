@@ -67,7 +67,7 @@ namespace sdds {
 
 		MenuItem title{}; // Title of the menu
 		MenuItem* items[MAX_MENU_ITEMS]{}; // Array of MenuItem pointers
-		unsigned int itemCount = 0; // Number of items in the menu
+		unsigned int itemCount{}; // Number of items in the menu
 	public:
 		// Constructor & Destructor
 		Menu();

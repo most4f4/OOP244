@@ -115,9 +115,7 @@ namespace sdds {
 		os << " 0- Exit" << endl;
 		os << "> ";
 
-		
 		return os;
-
 
 	}
 
@@ -174,10 +172,6 @@ namespace sdds {
 	std::ostream& operator<<(std::ostream& os, Menu& menu) {
 		return (menu.displayTitle(os));
 	}
-
-
-
-
 
 
 }

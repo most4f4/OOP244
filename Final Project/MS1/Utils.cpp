@@ -55,7 +55,6 @@ namespace sdds {
 
         return userInput;
 
-
 	}
 
 
