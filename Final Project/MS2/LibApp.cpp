@@ -97,7 +97,7 @@ namespace sdds {
 
 	void LibApp::run()
 	{
-		bool stayFlag = true;
+		bool exitFlag = false;
 
 		do {
 			int userSelection = m_mainMenu.run();
@@ -122,25 +122,25 @@ namespace sdds {
 					{
 					case 1:
 						save();
-						stayFlag = false;
+						exitFlag = true;
 						break;
 					case 2:
 						cout << endl;
 						break;
 					case 0:
 						if (confirm("This will discard all the changes are you sure ?")) {
-							stayFlag = false;
+							exitFlag = true;
 						}
 						break;
 					}
 				}
 				else {
-					stayFlag = false;
+					exitFlag = true;
 				}
 
 			}
 
-		} while (stayFlag);
+		} while (!exitFlag);
 		cout << endl;
 		cout << "-------------------------------------------" << endl;
 		cout << "Thanks for using Seneca Library Application" << endl;
