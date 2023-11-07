@@ -112,23 +112,12 @@ namespace sdds {
 
    std::istream& Date::read(std::istream& is)
    {
-       /*
-       * "is" is an istream object passed as a parameter to the method. 
-       * It represents the input stream from which the date is being read.
-       */
        errCode(NO_ERROR);
 
-       //reads the value of the year from the input stream(is) and 
-       // stores it into the m_year member variable of the Date class.is >> m_year;
        is >> m_year;
-       // Read separator and discard
-       char separator;
-       is >> separator;
-       // Read month
+       is.ignore(); 
        is >> m_mon;
-       // Read separator and discard
-       is >> separator;
-       // Read day
+       is.ignore();
        is >> m_day;
 
        if (is.fail()) {
@@ -140,8 +129,7 @@ namespace sdds {
            validate();
        }
 
-
-
+       is.ignore(1000, '\n');
        return is;
    }
 
