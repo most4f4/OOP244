@@ -11,8 +11,6 @@ namespace sdds {
        Menu m_mainMenu;
        Menu m_exitMenu;
 
-
-
        bool confirm(const char* message);
 
        void load();  // prints: "Loading Data"<NEWLINE>

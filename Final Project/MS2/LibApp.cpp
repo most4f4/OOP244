@@ -17,4 +17,13 @@ namespace sdds {
 
 		load();
 	}
+
+	bool LibApp::confirm(const char* message) {
+		Menu M(message);
+		M << "yes";
+		return M.run() == 1;
+
+	}
+
+
 }
