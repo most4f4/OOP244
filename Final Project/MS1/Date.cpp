@@ -91,6 +91,10 @@ namespace sdds {
    int Date::currentYear()const {
       return m_CUR_YEAR;
    }
+   int Date::getDaysSince0001_1_1() const
+   {
+       return daysSince0001_1_1();
+   }
    void Date::errCode(int readErrorCode) {
       m_ErrorCode = readErrorCode;
    }
