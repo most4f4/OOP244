@@ -76,7 +76,7 @@ namespace sdds {
 
 		// Deleted copy constructor and copy assignment operator to prevent copying
 		Menu(const Menu&) = delete;
-		void operator=(const Menu&) = delete;
+		Menu& operator=(const Menu&) = delete;
 
 		std::ostream& displayTitle(std::ostream& os = std::cout); // Display the title of the menu
 		std::ostream& displayMenu(std::ostream& os = std::cout); // Display the full menu
