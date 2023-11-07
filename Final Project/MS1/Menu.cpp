@@ -99,7 +99,7 @@ namespace sdds {
 	std::ostream& Menu::displayMenu(std::ostream& os)
 	{
 		if (title) {
-			title.display();
+			displayTitle(os);
 			os << ":" << endl;
 		}
 		for (unsigned int i = 0; i < itemCount; i++) {
