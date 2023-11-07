@@ -3,6 +3,7 @@
 
 using namespace std;
 namespace sdds {
+
 	LibApp::LibApp() :
 		m_changed(false),
 		m_mainMenu("Seneca Libray Application"),
@@ -37,6 +38,22 @@ namespace sdds {
 		cout << "Searching for publication" << endl;
 	}
 
+	void LibApp::returnPub() {
+		search();
+		cout << "Returning publication" << endl;
+		cout << "Publication returned" << endl;
+		m_changed = true;
+	}
+	
+	void LibApp::newPublication() {
+		cout << "Adding new publication to library" << endl;
+		int result = confirm("Add this publication to library?");
+		if (result) {
+			m_changed = true;
+			cout << "Publication added";
+		}
+
+	}
 
 
 }
