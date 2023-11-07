@@ -22,7 +22,7 @@ namespace sdds {
 
 	bool LibApp::confirm(const char* message) {
 		Menu M(message);
-		M << "yes";
+		M << "Yes";
 		return M.run() == 1;
 	}
 
@@ -43,6 +43,7 @@ namespace sdds {
 		cout << "Returning publication" << endl;
 		cout << "Publication returned" << endl;
 		m_changed = true;
+		cout << endl;
 	}
 	
 	void LibApp::newPublication() {
@@ -52,6 +53,7 @@ namespace sdds {
 			m_changed = true;
 			cout << "Publication added" << endl;
 		}
+		cout << endl;
 
 	}
 
@@ -63,6 +65,7 @@ namespace sdds {
 			m_changed = true;
 			cout << "Publication removed" << endl;
 		}
+		cout << endl;
 	}
 
 	void LibApp::checkOutPub() {
@@ -72,6 +75,7 @@ namespace sdds {
 			m_changed = true;
 			cout << "Publication checked out" << endl;
 		}
+		cout << endl;
 	}
 
 	void LibApp::run()
@@ -93,8 +97,8 @@ namespace sdds {
 				break;
 			case 4:
 				returnPub();
-
-			default: // case 0:
+				break;
+			case 0:
 				if (m_changed) {
 					int exitSelection = m_exitMenu.run();
 					switch (exitSelection)
@@ -104,19 +108,25 @@ namespace sdds {
 						stayFlag = false;
 						break;
 					case 2:
+						cout << endl;
 						break;
-					default: //case 0:
+					case 0:
 						if (confirm("This will discard all the changes are you sure ?")) {
 							stayFlag = false;
 						}
 						break;
 					}
 				}
-				break;
+				else {
+					stayFlag = false;
+				}
+
 			}
 
 		} while (stayFlag);
-		
+		cout << endl;
+		cout << "-------------------------------------------" << endl;
+		cout << "Thanks for using Seneca Library Application" << endl;
 
 	}
 
