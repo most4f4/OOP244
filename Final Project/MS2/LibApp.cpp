@@ -29,6 +29,8 @@ namespace sdds {
 		cout << "Loading Data" << endl;
 	}
 
-
+	void LibApp::save() {
+		cout << "Saving Data" << endl;
+	}
 
 }
