@@ -79,15 +79,15 @@ namespace sdds {
       operator bool() const;
 
    };
-   std::ostream& operator<<(std::ostream& os, const Date& RO);
-   std::istream& operator>>(std::istream& is, Date& RO);
+   std::ostream& operator<<(std::ostream& os, const Date& rightOperand);
+   std::istream& operator>>(std::istream& is, Date& ROrightOperand);
    bool operator==(const Date& leftOperand, const Date& rightOperand);
    bool operator!=(const Date& leftOperand, const Date& rightOperand);
    bool operator>=(const Date& leftOperand, const Date& rightOperand);
    bool operator<=(const Date& leftOperand, const Date& rightOperand);
    bool operator>(const Date& leftOperand, const Date& rightOperand);
    bool operator<(const Date& leftOperand, const Date& rightOperand);
-   bool operator-(const Date& leftOperand, const Date& rightOperand);
+   int operator-(const Date& leftOperand, const Date& rightOperand);
 
 }
 #endif

@@ -24,7 +24,7 @@
     <ClCompile Include="Utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ms1_tester.cpp">
+    <ClCompile Include="dateTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -91,10 +91,6 @@ namespace sdds {
    int Date::currentYear()const {
       return m_CUR_YEAR;
    }
-   int Date::getDaysSince0001_1_1() const
-   {
-       return daysSince0001_1_1();
-   }
    void Date::errCode(int readErrorCode) {
       m_ErrorCode = readErrorCode;
    }
@@ -126,7 +122,6 @@ namespace sdds {
 
        if (is.fail()) {
            is.clear();
-           is.ignore(1000, '\n');
            errCode(CIN_FAILED);
        }
        else {
@@ -161,6 +156,11 @@ namespace sdds {
        return !bad();
    }
 
+   int Date::getDaysSince0001_1_1() const
+   {
+       return daysSince0001_1_1();
+   }
+
    bool operator==(const Date& leftOperand, const Date& rightOperand)
    {
        return leftOperand.getDaysSince0001_1_1() == rightOperand.getDaysSince0001_1_1();
@@ -191,9 +191,9 @@ namespace sdds {
        return leftOperand.getDaysSince0001_1_1() < rightOperand.getDaysSince0001_1_1();
    }
 
-   bool operator-(const Date& leftOperand, const Date& rightOperand)
+   int operator-(const Date& leftOperand, const Date& rightOperand)
    {
-       return leftOperand.getDaysSince0001_1_1() - rightOperand.getDaysSince0001_1_1();
+       return (leftOperand.getDaysSince0001_1_1() - rightOperand.getDaysSince0001_1_1());
    }
 
 }
