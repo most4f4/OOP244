@@ -1,6 +1,7 @@
 #include <iostream>
 #include "LibApp.h"
 
+using namespace std;
 namespace sdds {
 	LibApp::LibApp() :
 		m_changed(false),
@@ -22,8 +23,12 @@ namespace sdds {
 		Menu M(message);
 		M << "yes";
 		return M.run() == 1;
-
 	}
+
+	void LibApp::load() {
+		cout << "Loading Data" << endl;
+	}
+
 
 
 }
