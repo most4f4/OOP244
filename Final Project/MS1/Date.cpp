@@ -156,45 +156,11 @@ namespace sdds {
        return os;
    }
 
-   bool Date::operator==(const Date& other) const
-   {
-       return daysSince0001_1_1() == other.daysSince0001_1_1();
-   }
-
-   bool Date::operator!=(const Date& other) const
-   {
-       return daysSince0001_1_1() != other.daysSince0001_1_1();
-   }
-
-   bool Date::operator>=(const Date& other) const
-   {
-       return daysSince0001_1_1() >= other.daysSince0001_1_1();
-   }
-
-   bool Date::operator<=(const Date& other) const
-   {
-       return daysSince0001_1_1() <= other.daysSince0001_1_1();
-   }
-
-   bool Date::operator>(const Date& other) const
-   {
-       return daysSince0001_1_1() > other.daysSince0001_1_1();
-   }
-
-   bool Date::operator<(const Date& other) const
-   {
-       return daysSince0001_1_1() < other.daysSince0001_1_1();
-   }
-
-   int Date::operator-(const Date& other) const
-   {
-       return daysSince0001_1_1() - other.daysSince0001_1_1();
-   }
-
    Date::operator bool() const
    {
        return !bad();
    }
+
 
    
 

@@ -78,22 +78,19 @@ namespace sdds {
       std::istream& read(std::istream& is = std::cin);
       std::ostream& write(std::ostream& os = std::cout)const;
 
-      bool operator==(const Date& other) const;
-      bool operator!=(const Date& other) const;
-      bool operator>=(const Date& other) const;
-      bool operator<=(const Date& other) const;
-      bool operator>(const Date& other) const;
-      bool operator<(const Date& other) const;
-      int operator-(const Date& other) const;
       operator bool() const;
 
 
    };
    std::ostream& operator<<(std::ostream& os, const Date& RO);
    std::istream& operator>>(std::istream& is, Date& RO);
-
-   bool operator==(const Date& leftOperand, const Date& rightOperand),
-
+   bool operator==(const Date& leftOperand, const Date& rightOperand);
+   bool operator!=(const Date& leftOperand, const Date& rightOperand);
+   bool operator>=(const Date& leftOperand, const Date& rightOperand);
+   bool operator<=(const Date& leftOperand, const Date& rightOperand);
+   bool operator>(const Date& leftOperand, const Date& rightOperand);
+   bool operator<(const Date& leftOperand, const Date& rightOperand);
+   bool operator-(const Date& leftOperand, const Date& rightOperand);
 
 }
 #endif
