@@ -23,7 +23,6 @@ namespace sdds {
 		virtual void set(int member_id);
 		void setRef(int value);
 		void resetDate();
-
 		virtual char type()const;
 		bool onLoan()const;
 		Date checkoutDate()const;
