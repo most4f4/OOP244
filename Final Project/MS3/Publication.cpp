@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <iostream>
 #include <cstring>
 #include <iomanip>
@@ -9,7 +11,7 @@ namespace sdds {
 	void Publication::setEmpty()
 	{
 		m_title = nullptr;
-		m_shelfId[0] = "\0";
+		m_shelfId[0] = '\0';
 		m_membership = 0;
 		m_libRef = -1;
 		m_date.setToToday();
@@ -104,6 +106,58 @@ namespace sdds {
 		}
 
 		return os;
+	}
+
+	istream& Publication::read(istream& istr)
+	{
+
+		char tempShelfId[SDDS_SHELF_ID_LEN + 1]{};
+		char tempTitle[256]{};
+		Date tempDate;
+		int tempMembership = 0;
+		int tempLibRef = -1;
+
+		setEmpty();
+
+		if (conIO(istr)) {
+
+			cout << "Shelf No: ";
+			istr.getline(tempShelfId, SDDS_SHELF_ID_LEN + 1);
+			if (strlen(tempShelfId) != SDDS_SHELF_ID_LEN) {
+				istr.setstate(ios::failbit);
+			}
+
+			cout << "Title: ";
+			istr.getline(tempTitle, 256);
+
+			cout << "Date: ";
+			istr >> tempDate;
+
+		}
+		else {
+
+			istr >> tempLibRef;
+			istr.ignore();
+			istr.getline(tempShelfId, SDDS_SHELF_ID_LEN + 1, '\t');
+			istr.getline(tempTitle, SDDS_TITLE_WIDTH + 1, '\t');
+			istr >> tempMembership;
+			istr.ignore();
+			istr >> tempDate;
+		}
+		
+		if (!tempDate) istr.setstate(ios::failbit);
+
+		if (istr) {
+
+			m_title = new char[strlen(tempTitle + 1)];
+			strcpy(m_title, tempTitle);
+			strcpy(m_shelfId, tempShelfId);
+			m_membership = tempMembership;
+			m_date = tempDate;
+			setRef(tempLibRef);
+		}
+
+		return istr;
 	}
 
 
