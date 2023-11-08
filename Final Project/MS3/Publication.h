@@ -10,8 +10,8 @@ namespace sdds {
 
 	class Publication : public Streamable {
 
-		const char* m_title{};
-		const char* m_shelfId[SDDS_SHELF_ID_LEN+1]{};
+		char* m_title{};
+		char m_shelfId[SDDS_SHELF_ID_LEN+1]{};
 		int m_membership{ 0 };
 		int m_libRef{ -1 };
 		Date m_date;
@@ -29,11 +29,10 @@ namespace sdds {
 		bool operator==(const char* title)const;
 		operator const char* ()const;
 		int getRef()const;
-
-		bool conIO(ios& io)const;
-		ostream& write(ostream& os) const;
-		istream& read(istream& istr);
 		operator bool() const;
+		bool conIO(std::ios& io)const;
+		std::ostream& write(std::ostream& os) const;
+		std::istream& read(std::istream& istr);
 
 		Publication(const Publication& src);
 		Publication& operator=(const Publication& src);
