@@ -10,7 +10,10 @@ namespace sdds {
 
 	void Publication::setEmpty()
 	{
-		m_title = nullptr;
+		if (m_title != nullptr) {
+			delete[] m_title;
+			m_title = nullptr;
+		}
 		m_shelfId[0] = '\0';
 		m_membership = 0;
 		m_libRef = -1;
@@ -74,7 +77,7 @@ namespace sdds {
 
 	Publication::operator bool() const
 	{
-		return m_title != nullptr && m_shelfId[0] != '\0';
+		return (m_title != nullptr && m_shelfId[0] != '\0');
 	}
 
 	bool Publication::conIO(ios& io)const {
@@ -109,32 +112,31 @@ namespace sdds {
 
 	istream& Publication::read(istream& istr)
 	{
+		setEmpty();
 
+		char tempTitle[SDDS_TITLE_WIDTH + 1]{};
 		char tempShelfId[SDDS_SHELF_ID_LEN + 1]{};
-		char tempTitle[256]{};
-		Date tempDate;
 		int tempMembership = 0;
 		int tempLibRef = -1;
-
-		setEmpty();
+		Date tempDate;
 
 		if (conIO(istr)) {
 
 			cout << "Shelf No: ";
 			istr.getline(tempShelfId, SDDS_SHELF_ID_LEN + 1);
+
 			if (strlen(tempShelfId) != SDDS_SHELF_ID_LEN) {
 				istr.setstate(ios::failbit);
 			}
 
 			cout << "Title: ";
-			istr.getline(tempTitle, 256);
+			istr.getline(tempTitle, SDDS_TITLE_WIDTH + 1);
 
 			cout << "Date: ";
 			istr >> tempDate;
 
 		}
 		else {
-
 			istr >> tempLibRef;
 			istr.ignore();
 			istr.getline(tempShelfId, SDDS_SHELF_ID_LEN + 1, '\t');
@@ -143,15 +145,16 @@ namespace sdds {
 			istr.ignore();
 			istr >> tempDate;
 		}
-		
-		if (!tempDate) istr.setstate(ios::failbit);
+
+		if (!tempDate) {
+			istr.setstate(ios::failbit);
+		}
 
 		if (istr) {
-
-			m_title = new char[strlen(tempTitle + 1)];
+			m_title = new char[strlen(tempTitle) + 1];
 			strcpy(m_title, tempTitle);
 			strcpy(m_shelfId, tempShelfId);
-			m_membership = tempMembership;
+			set(tempMembership);
 			m_date = tempDate;
 			setRef(tempLibRef);
 		}
@@ -182,14 +185,13 @@ namespace sdds {
 			m_date = src.m_date;
 
 		}
-		
+
 		return *this;
 	}
 
 	Publication::~Publication()
 	{
 		delete[] m_title;
-		m_title = nullptr;
 	}
 
 
