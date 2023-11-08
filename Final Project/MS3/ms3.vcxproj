@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Date.cpp" />
+    <ClCompile Include="ms3_tester.cpp" />
     <ClCompile Include="Publication.cpp" />
     <ClCompile Include="Streamable.cpp" />
     <ClCompile Include="Utils.cpp" />

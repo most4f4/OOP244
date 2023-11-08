@@ -77,8 +77,7 @@ namespace sdds {
 		return m_title != nullptr && m_shelfId[0] != '\0';
 	}
 
-	bool Publication::conIO(ios& io)const
-	{
+	bool Publication::conIO(ios& io)const {
 		return (&io == &cin || &io == &cout);
 	}
 

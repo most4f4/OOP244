@@ -27,6 +27,9 @@
     <ClCompile Include="Publication.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ms3_tester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h">

@@ -15,10 +15,10 @@ namespace sdds {
 		int m_membership{ 0 };
 		int m_libRef{ -1 };
 		Date m_date;
-		void setEmpty();
 
 	public:
 
+		void setEmpty();
 		Publication();
 		virtual void set(int member_id);
 		void setRef(int value);
@@ -33,7 +33,6 @@ namespace sdds {
 		bool conIO(std::ios& io)const;
 		std::ostream& write(std::ostream& os) const;
 		std::istream& read(std::istream& istr);
-
 		Publication(const Publication& src);
 		Publication& operator=(const Publication& src);
 		virtual ~Publication();
