@@ -160,5 +160,38 @@ namespace sdds {
 		return istr;
 	}
 
+	Publication::Publication(const Publication& src)
+	{
+		operator=(src);
+	}
+
+	Publication& Publication::operator=(const Publication& src)
+	{
+		if (this != &src) {
+
+			delete[] m_title;
+			m_title = nullptr;
+
+			if (src.m_title) {
+				m_title = new char[strlen(src.m_title) + 1];
+				strcpy(m_title, src.m_title);
+			}
+
+			strcpy(m_shelfId, src.m_shelfId);
+			set(src.m_membership);
+			setRef(src.m_libRef);
+			m_date = src.m_date;
+
+		}
+		
+		return *this;
+	}
+
+	Publication::~Publication()
+	{
+		delete[] m_title;
+		m_title = nullptr;
+	}
+
 
 }
