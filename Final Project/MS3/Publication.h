@@ -37,7 +37,7 @@ namespace sdds {
 
 		Publication(const Publication& src);
 		Publication& operator=(const Publication& src);
-
+		virtual ~Publication();
 
 	};
 
