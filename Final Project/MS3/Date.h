@@ -89,5 +89,10 @@ namespace sdds {
    bool operator<(const Date& leftOperand, const Date& rightOperand);
    int operator-(const Date& leftOperand, const Date& rightOperand);
 
+   extern bool sdds_test;
+   extern int sdds_year;
+   extern int sdds_mon;
+   extern int sdds_day;
+
 }
 #endif
