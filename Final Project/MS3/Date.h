@@ -63,7 +63,6 @@ namespace sdds {
       int systemYear()const;       // returns the current system year
       bool bad()const;             // return true if the Date is in an erroneous state.
       int mdays()const;            // returns the number of days in current month
-      void setToToday();           // sets the date to the current date (system date)
    public:
       Date();                      // creates a date with current date
       Date(int year, int mon, int day); /* create a date with assigned values
@@ -77,6 +76,8 @@ namespace sdds {
       std::istream& read(std::istream& is = std::cin);
       std::ostream& write(std::ostream& os = std::cout)const;
       operator bool() const;
+
+      void setToToday();           // sets the date to the current date (system date)
 
    };
    std::ostream& operator<<(std::ostream& os, const Date& rightOperand);
