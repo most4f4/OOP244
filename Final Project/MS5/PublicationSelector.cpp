@@ -8,12 +8,17 @@
 // Name               Date                 Reason
 //
 /////////////////////////////////////////////////////////////////
+
 #define _CRT_SECURE_NO_WARNINGS
+
 #include <iostream>
 #include <cstring>
 #include "PublicationSelector.h"
+
 using namespace std;
 namespace sdds {
+
+
    void PublicationSelector::display(int page) const {
       cout << m_title << endl 
            << " Row  |LocID | Title                          |Mem ID | Date       | Author          |" << endl
