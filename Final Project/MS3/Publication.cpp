@@ -77,11 +77,11 @@ namespace sdds {
 
 	Publication::operator bool() const
 	{
-		return (m_title != nullptr && m_shelfId[0] != '\0');
+		return m_title != nullptr && m_shelfId[0] != '\0';
 	}
 
 	bool Publication::conIO(ios& io)const {
-		return (&io == &cin || &io == &cout);
+		return &io == &cin || &io == &cout;
 	}
 
 	ostream& Publication::write(ostream& os) const
@@ -114,7 +114,7 @@ namespace sdds {
 	{
 		setEmpty();
 
-		char tempTitle[SDDS_TITLE_WIDTH + 1]{};
+		char tempTitle[256]{};
 		char tempShelfId[SDDS_SHELF_ID_LEN + 1]{};
 		int tempMembership = 0;
 		int tempLibRef = -1;
@@ -130,7 +130,7 @@ namespace sdds {
 			}
 
 			cout << "Title: ";
-			istr.getline(tempTitle, SDDS_TITLE_WIDTH + 1);
+			istr.getline(tempTitle, 256);
 
 			cout << "Date: ";
 			istr >> tempDate;
@@ -140,7 +140,7 @@ namespace sdds {
 			istr >> tempLibRef;
 			istr.ignore();
 			istr.getline(tempShelfId, SDDS_SHELF_ID_LEN + 1, '\t');
-			istr.getline(tempTitle, SDDS_TITLE_WIDTH + 1, '\t');
+			istr.getline(tempTitle, 256, '\t');
 			istr >> tempMembership;
 			istr.ignore();
 			istr >> tempDate;
