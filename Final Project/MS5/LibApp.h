@@ -40,7 +40,7 @@ namespace sdds {
        bool confirm(const char* message);
        void load();  
        void save();  
-       void search();  
+       int search(int searchType);
        void returnPub();  
        void newPublication();
        void removePublication();

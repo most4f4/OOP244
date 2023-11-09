@@ -132,6 +132,7 @@
     <ClCompile Include="LibApp.cpp" />
     <ClCompile Include="LibAppMain.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Publication.cpp" />
     <ClCompile Include="PublicationSelector.cpp" />
     <ClCompile Include="pubSel_Tester.cpp" />
     <ClCompile Include="Streamable.cpp" />
@@ -143,6 +144,7 @@
     <ClInclude Include="Lib.h" />
     <ClInclude Include="LibApp.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Publication.h" />
     <ClInclude Include="PublicationSelector.h" />
     <ClInclude Include="Streamable.h" />
     <ClInclude Include="Utils.h" />
