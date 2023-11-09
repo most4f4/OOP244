@@ -97,6 +97,17 @@ namespace sdds {
 
 	}
 
+	void Book::set(int member_id)
+	{
+		Publication::set(member_id);
+		Publication::resetDate();
+	}
+
+	Book::operator bool() const
+	{
+		return Publication::operator bool() && m_author != nullptr && m_author[0] != nullptr;
+	}
+
 
 
 }
