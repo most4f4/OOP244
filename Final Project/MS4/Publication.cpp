@@ -8,6 +8,8 @@ Revision History
 -----------------------------------------------------------
 Date      Reason
 2023/11/07  Preliminary release
+2023/11/08  Edited in MS4 (write function)
+
 
 -----------------------------------------------------------
 I have done all the coding by myself and only copied the code
@@ -19,7 +21,7 @@ that my professor provided to complete my workshops and assignments.
 
 #include <iostream>
 #include <cstring>
-#include <iomanip>
+#include "Utils.h"
 #include "Publication.h"
 
 using namespace std;
@@ -104,13 +106,29 @@ namespace sdds {
 	ostream& Publication::write(ostream& os) const
 	{
 		if (conIO(os)) {
-			os << "| " << m_shelfId << " | " << left << setw(30) << setfill('.') << m_title << " | ";
+			os << "| " << m_shelfId << " | ";
+
+			if (ut.strlen(m_title) > SDDS_TITLE_WIDTH) {
+				for (int i = 0; i < SDDS_TITLE_WIDTH; i++) {
+					os << m_title[i];
+				}
+			}else {
+				os.setf(ios::left);
+				os.width(SDDS_TITLE_WIDTH);
+				os.fill('.');
+				os << m_title;
+				os.unsetf(ios::left);
+			}
+
+			os << " | ";
+
 			if (m_membership != 0) {
 				os << m_membership;
 			}
 			else {
 				os << " N/A ";
 			}
+
 			os << " | " << m_date << " | ";
 		}
 		else {
