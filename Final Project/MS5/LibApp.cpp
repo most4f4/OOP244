@@ -18,6 +18,8 @@ that my professor provided to complete my workshops and assignments.
 #include <iostream>
 #include <fstream>
 #include "LibApp.h"
+#include "PublicationSelector.h"
+#include "Publication.h"
 
 using namespace std;
 namespace sdds {
@@ -48,6 +50,19 @@ namespace sdds {
 		return M.run() == 1;
 	}
 
+	/*
+	First print "Loading Data" and then open the data file for reading and read 
+	all the publications in dynamic instances pointed by the PPA Array. 
+	
+	Do this by first reading a single character for the type of publication and 
+	then dynamically instantiating the corresponding object into the next available PPA element. 
+	Then extract the object from the file stream and add one to the NOLP. Since the extraction 
+	operator calls the proper read function virtually, the object will be properly read from the file. 
+	
+	Continue this until the ifstream reading fails.
+	
+	At the end set the LLRN to the reference number of the last publication read.
+	*/
 	void LibApp::load() {
 
 		cout << "Loading Data" << endl;
@@ -116,8 +131,94 @@ namespace sdds {
 
 	}
 
-	void LibApp::search() {
-		cout << "Searching for publication" << endl;
+	int LibApp::search(int searchType) {
+
+		char tempTitle[257];
+		char tempType;
+		int userSelection = 0;
+		PublicationSelector ps("Select one of the following found matches:", 15);
+
+		int selectedType = m_pubType.run();
+
+
+		if (selectedType == 0) {
+			cout << "Aborted!" << endl;
+		}
+		else {
+
+			if (selectedType == 1) {
+				tempType = 'B';
+			}
+			else if (selectedType == 2) {
+				tempType = 'P';
+			}
+
+			cin.ignore();
+			cout << "Publication Title: ";
+			cin.getline(tempTitle, 257);
+
+			switch (searchType)
+			{
+			case 1: // search All
+
+				for (int i = 0; i < m_nolp; i++) {
+
+					if (m_ppa[i]->type() == tempType && m_ppa[i]->operator==(tempTitle) && m_ppa[i]->getRef() != 0) {
+						ps << m_ppa[i];
+					}
+				}
+
+				break;
+
+			case 2: //Search Checkout Items
+
+				for (int i = 0; i < m_nolp; i++) {
+
+					if (m_ppa[i]->type() == tempType && m_ppa[i]->operator==(tempTitle) && m_ppa[i]->getRef() != 0
+						&& m_ppa[i]->onLoan()) {
+						ps << m_ppa[i];
+					}
+				}
+
+				break;
+
+			case 3: //Search Available Items
+
+				for (int i = 0; i < m_nolp; i++) {
+
+					if (m_ppa[i]->type() == tempType && m_ppa[i]->operator==(tempTitle) && m_ppa[i]->getRef() != 0
+						&& !m_ppa[i]->onLoan()) {
+						ps << m_ppa[i];
+					}
+				}
+
+				break;
+			}
+
+			if (ps) {
+
+				ps.sort();
+
+				userSelection = ps.run();
+
+				if (userSelection == 0) {
+
+					cout << "Aborted!" << endl;
+
+				}
+
+			}
+			else {
+
+				cout << "No matches found!" << endl;
+
+			}
+
+
+		}
+
+		return userSelection;
+
 	}
 
 	void LibApp::returnPub() {
