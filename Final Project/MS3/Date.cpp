@@ -1,22 +1,27 @@
-/***********************************************************************
-// OOP244 Date Module
-// Project MS3
-// File	Date.cpp
-// Version 1.0
-// Name            Date            Student ID            Email
-//Xinyang Wu    July 24th,2023      153821228         xwu159@myseneca.ca
+/* Citation and Sources...
+Final Project Milestone 3
+Module: Date
+Filename: Date.cpp
+Version 1.0
+Author	Mostafa Hasanalipourshahrabadi
+Revision History
+-----------------------------------------------------------
+Date      Reason
+2023/07/15  Preliminary release
+2023/11/07  Modified as for MS3 specifications
 
-// I have done all the coding by myself and only copied the code that my
-// professor provided to complete my workshops and assignments.
-///////////////////////////////////////////////////////////////////
-***********************************************************************/
+-----------------------------------------------------------
+I have done all the coding by myself and only copied the code
+that my professor provided to complete my workshops and assignments.
+-----------------------------------------------------------
+*/
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <iomanip>
 #include <iostream>
 #include <ctime>
-#include "Date.h"
 using namespace std;
-
+#include "Date.h"
 namespace sdds {
 
     bool sdds_test = false;
@@ -52,7 +57,6 @@ namespace sdds {
         }
         return theYear;
     }
-
     void Date::setToToday() {
         if (sdds_test) {
             m_day = sdds_day;
@@ -68,7 +72,6 @@ namespace sdds {
         }
         errCode(NO_ERROR);
     }
-
     int Date::daysSince0001_1_1()const { // Rata Die day since 0001/01/01 
         int ty = m_year;
         int tm = m_mon;
@@ -103,74 +106,99 @@ namespace sdds {
         return m_ErrorCode != 0;
     }
 
-    std::istream& Date::read(std::istream& is) {
+    ostream& operator<<(ostream& os, const Date& rightOperand) {
+        return rightOperand.write(os);
+    }
+    istream& operator>>(istream& is, Date& rightOperand) {
+        return rightOperand.read(is);
+    }
+
+    /*============================= MY CODE ==============================*/
+
+    std::istream& Date::read(std::istream& is)
+    {
         errCode(NO_ERROR);
+
         is >> m_year;
         is.ignore();
         is >> m_mon;
         is.ignore();
         is >> m_day;
-        if (!is) {
-            errCode(CIN_FAILED);
+
+        if (is.fail()) {
             is.clear();
+            errCode(CIN_FAILED);
         }
         else {
             validate();
         }
+
         return is;
     }
 
-    std::ostream& Date::write(std::ostream& os) const {
+    std::ostream& Date::write(std::ostream& os) const
+    {
         if (bad()) {
             os << dateStatus();
         }
         else {
-            os << m_year << "/"
-                << setfill('0') << setw(2) << m_mon << '/'
-                << setfill('0') << setw(2) << m_day;
-            //reset padding
-            os << setfill(' ');
+            os << m_year << "/";
+            os.setf(ios::right);
+            os.width(2);
+            os.fill('0');
+            os << m_mon << "/";
+            os.width(2);
+            os.fill('0');
+            os << m_day;
+            os.fill(' ');
+            os.unsetf(ios::right);
         }
         return os;
     }
 
-    ostream& operator<<(ostream& os, const Date& RO) {
-        return RO.write(os);
-    }
-
-    istream& operator>>(istream& is, Date& RO) {
-        return RO.read(is);
-    }
-
-    int Date::getDaysSince0001_1_1()const {
-        return daysSince0001_1_1();
-    }
-
-    Date::operator bool() const {
+    Date::operator bool() const
+    {
         return !bad();
     }
 
-    bool operator==(const Date& lhs, const Date& rhs) {
-        return lhs.getDaysSince0001_1_1() == rhs.getDaysSince0001_1_1();
+    int Date::getDaysSince0001_1_1() const
+    {
+        return daysSince0001_1_1();
     }
 
-    bool operator!=(const Date& lhs, const Date& rhs) {
-        return lhs.getDaysSince0001_1_1() != rhs.getDaysSince0001_1_1();
+    bool operator==(const Date& leftOperand, const Date& rightOperand)
+    {
+        return leftOperand.getDaysSince0001_1_1() == rightOperand.getDaysSince0001_1_1();
     }
-    bool operator>=(const Date& lhs, const Date& rhs) {
-        return lhs.getDaysSince0001_1_1() >= rhs.getDaysSince0001_1_1();
+
+    bool operator!=(const Date& leftOperand, const Date& rightOperand)
+    {
+        return leftOperand.getDaysSince0001_1_1() != rightOperand.getDaysSince0001_1_1();
     }
-    bool operator<=(const Date& lhs, const Date& rhs) {
-        return lhs.getDaysSince0001_1_1() <= rhs.getDaysSince0001_1_1();
+
+    bool operator>=(const Date& leftOperand, const Date& rightOperand)
+    {
+        return leftOperand.getDaysSince0001_1_1() >= rightOperand.getDaysSince0001_1_1();
     }
-    bool operator<(const Date& lhs, const Date& rhs) {
-        return lhs.getDaysSince0001_1_1() < rhs.getDaysSince0001_1_1();
+
+    bool operator<=(const Date& leftOperand, const Date& rightOperand)
+    {
+        return leftOperand.getDaysSince0001_1_1() <= rightOperand.getDaysSince0001_1_1();
     }
-    bool operator>(const Date& lhs, const Date& rhs) {
-        return lhs.getDaysSince0001_1_1() > rhs.getDaysSince0001_1_1();
+
+    bool operator>(const Date& leftOperand, const Date& rightOperand)
+    {
+        return leftOperand.getDaysSince0001_1_1() > rightOperand.getDaysSince0001_1_1();
     }
-    int operator-(const Date& lhs, const Date& rhs) {
-        return (lhs.getDaysSince0001_1_1() - rhs.getDaysSince0001_1_1());
+
+    bool operator<(const Date& leftOperand, const Date& rightOperand)
+    {
+        return leftOperand.getDaysSince0001_1_1() < rightOperand.getDaysSince0001_1_1();
+    }
+
+    int operator-(const Date& leftOperand, const Date& rightOperand)
+    {
+        return (leftOperand.getDaysSince0001_1_1() - rightOperand.getDaysSince0001_1_1());
     }
 
 }
