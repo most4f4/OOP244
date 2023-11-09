@@ -69,7 +69,32 @@ namespace sdds {
 
 	std::istream& Book::read(std::istream& istr)
 	{
-		// TODO: insert return statement here
+		char tempAuthor[257]{};
+
+		Publication::read(istr);
+
+		delete[] m_author;
+		m_author = nullptr;
+
+		if (conIO(istr)) {
+
+			istr.ignore();
+			cout << "Author: ";
+			istr.getline(tempAuthor, 257);
+
+		}
+		else {
+
+			istr.ignore();
+			istr.getline(tempAuthor, 257);
+		}
+
+		if (istr) {
+			ut.reStrAloCpy(m_author, tempAuthor);
+		}
+
+		return istr;
+
 	}
 
 
