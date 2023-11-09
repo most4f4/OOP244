@@ -16,6 +16,7 @@ that my professor provided to complete my workshops and assignments.
 */
 
 #include <iostream>
+#include <fstream>
 #include "LibApp.h"
 
 using namespace std;
@@ -24,7 +25,8 @@ namespace sdds {
 	LibApp::LibApp() :
 		m_changed(false),
 		m_mainMenu("Seneca Libray Application"),
-		m_exitMenu("Changes have been made to the data, what would you like to do?")
+		m_exitMenu("Changes have been made to the data, what would you like to do?"),
+		m_pubType("Choose the type of publication:")
 	{
 		m_mainMenu << "Add New Publication";
 		m_mainMenu << "Remove Publication";
@@ -33,6 +35,9 @@ namespace sdds {
 
 		m_exitMenu << "Save changes and exit";
 		m_exitMenu << "Cancel and go back to the main menu";
+
+		m_pubType << "Book";
+		m_pubType << "Publication";
 
 		load();
 	}
@@ -44,11 +49,71 @@ namespace sdds {
 	}
 
 	void LibApp::load() {
+
 		cout << "Loading Data" << endl;
+
+		ifstream infile(m_fileName);
+
+		char type{};
+
+		for (int i = 0; infile && i < SDDS_LIBRARY_CAPACITY; i++) {
+
+			infile >> type;
+
+			infile.ignore();
+
+			if (infile) {
+
+				if (type == 'P') {
+
+					m_ppa[i] = new Publication;
+
+				}else if (type == 'B') {
+
+					m_ppa[i] = new Book;
+
+				}
+
+				if (m_ppa[i]) {
+
+					infile >> *m_ppa[i];
+
+					m_nolp++;
+
+					m_llrn = m_ppa[i]->getRef();
+
+				}
+
+			}
+
+		}
+
 	}
 
+	//First print "Saving Data" and then open the data file stream for overwriting.  (ofstream)
+	//Go through the elements of PPA up to the N0LP.
+	//Insert all elements into the ofstream object except those with 0 (zero) as Library Reference Number.
+	//(return value of getRef() method)
+
+	//	> Publications that have the reference number of 0 (zero) are deleted by the user (removed from the library)
+	//and therefore should not be saved back into the data file.We refer to these publications as deleted ones.
+
 	void LibApp::save() {
+
 		cout << "Saving Data" << endl;
+
+		ofstream outfile(m_fileName);
+
+		for (int i = 0; i < m_nolp; i++) {
+
+			if (m_ppa[i]->getRef() != 0) {
+
+				outfile << *m_ppa[i] << endl;
+
+			}
+
+		}
+
 	}
 
 	void LibApp::search() {
