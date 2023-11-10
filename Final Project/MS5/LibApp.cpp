@@ -1,5 +1,5 @@
 /* Citation and Sources...
-Final Project Milestone 2
+Final Project Milestone 5
 Module: LibApp
 Filename: LibApp.cpp
 Version 1.0
@@ -7,7 +7,7 @@ Author	Mostafa Hasanalipourshahrabadi
 Revision History
 -----------------------------------------------------------
 Date      Reason
-2023/11/06  Preliminary release
+2023/11/10  Preliminary release
 
 -----------------------------------------------------------
 I have done all the coding by myself and only copied the code
@@ -25,12 +25,14 @@ that my professor provided to complete my workshops and assignments.
 using namespace std;
 namespace sdds {
 
-	LibApp::LibApp() :
+	LibApp::LibApp(const char* fileName) :
 		m_changed(false),
 		m_mainMenu("Seneca Libray Application"),
 		m_exitMenu("Changes have been made to the data, what would you like to do?"),
 		m_pubType("Choose the type of publication:")
 	{
+		ut.strncpy(m_fileName, fileName, 256);
+
 		m_mainMenu << "Add New Publication";
 		m_mainMenu << "Remove Publication";
 		m_mainMenu << "Checkout publication from library";
@@ -134,8 +136,8 @@ namespace sdds {
 
 	int LibApp::search(int searchType) {
 
-		char tempTitle[257];
-		char tempType;
+		char tempTitle[257]{};
+		char tempType{};
 		int userSelection = 0;
 		PublicationSelector ps("Select one of the following found matches:", 15);
 

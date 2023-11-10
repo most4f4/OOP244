@@ -1,5 +1,5 @@
 /* Citation and Sources...
-Final Project Milestone 4
+Final Project Milestone 5
 Module: Utils
 Filename: Utils.h
 Version 1.0
@@ -8,6 +8,7 @@ Revision History
 -----------------------------------------------------------
 Date      Reason
 2023/11/08  Preliminary release
+2023/11/10  MS5 added functions
 
 -----------------------------------------------------------
 I have done all the coding by myself and only copied the code

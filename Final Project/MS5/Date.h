@@ -1,5 +1,5 @@
 /* Citation and Sources...
-Final Project Milestone 4
+Final Project Milestone 5
 Module: Date
 Filename: Date.h
 Version 1.0
@@ -8,7 +8,6 @@ Revision History
 -----------------------------------------------------------
 Date      Reason
 2023/07/15  Preliminary release
-2023/11/07  Modified as for MS3 specifications
 
 -----------------------------------------------------------
 I have done all the coding by myself and only copied the code

@@ -1,5 +1,5 @@
 /* Citation and Sources...
-Final Project Milestone 2
+Final Project Milestone 5
 Module: LibApp
 Filename: LibApp.h
 Version 1.0
@@ -7,8 +7,7 @@ Author	Mostafa Hasanalipourshahrabadi
 Revision History
 -----------------------------------------------------------
 Date      Reason
-2023/11/06  Preliminary release
-2023/11/08  MS5 modifications
+2023/11/10  Preliminary release
 
 -----------------------------------------------------------
 I have done all the coding by myself and only copied the code
@@ -35,7 +34,7 @@ namespace sdds {
        char m_fileName[257]{};
        Publication* m_ppa[SDDS_LIBRARY_CAPACITY]{}; //Publication Pointers Array 
        int m_nolp{0}; //Number Of Loaded Publications 
-       int m_llrn{}; //Last Library Reference Number 
+       int m_llrn{0}; //Last Library Reference Number 
 
        bool confirm(const char* message);
        void load();  
@@ -49,7 +48,7 @@ namespace sdds {
 
    public:
 
-       LibApp();
+       LibApp(const char* fileName);
        void run();
    };
 }
