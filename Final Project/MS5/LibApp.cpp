@@ -250,16 +250,7 @@ namespace sdds {
 
 				Publication* p;
 
-				if (tempType == 1) {
-
-					p = new Book;
-
-				}
-				else {
-
-					p = new Publication;
-
-				}
+				tempType == 1 ? p = new Book : p = new Publication;
 
 				p->read(cin);
 
@@ -271,29 +262,31 @@ namespace sdds {
 				}
 				else {
 
-					int tempConfirm = confirm("Add this publication to the library?");
+					int userConfirm = confirm("Add this publication to the library?");
 
-					if (tempConfirm == 0) {
+					if (userConfirm == 1) {
+
+						if (p) {
+
+							m_llrn++;
+							p->setRef(m_llrn);
+							m_ppa[m_nolp] = p;
+							m_nolp++;
+							m_changed = true;
+							cout << "Publication added" << endl;
+
+						} else {
+
+							cout << "Failed to add publication!" << endl;
+							delete p;
+
+						}
+					} else {
 
 						cout << "Aborted!" << endl;
+						delete p;
 
 					}
-					else {
-
-						m_llrn++;
-						p->setRef(m_llrn);
-						m_ppa[m_nolp] = p;
-						m_nolp++;
-						m_changed = true;
-						cout << "Failed to add publication!" << endl;
-					}
-
-				}
-
-				if (!p) {
-
-					cout << "Failed to add publication!" << endl;
-					delete p;
 
 				}
 
@@ -301,24 +294,25 @@ namespace sdds {
 
 		}
 
-
-		int result = confirm("Add this publication to library?");
-		if (result) {
-			m_changed = true;
-			cout << "Publication added" << endl;
-		}
 		cout << endl;
 
 	}
 
 	void LibApp::removePublication() {
+
 		cout << "Removing publication from library" << endl;
-		search();
-		int result = confirm("Remove this publication from the library?");
-		if (result) {
+
+		int userSelection = search(1);
+
+		if (userSelection > 0 && confirm("Remove this publication from the library?")) {
+
+
+			getPub(userSelection)->setRef(0);
 			m_changed = true;
 			cout << "Publication removed" << endl;
+
 		}
+
 		cout << endl;
 	}
 
