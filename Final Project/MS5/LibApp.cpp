@@ -20,6 +20,7 @@ that my professor provided to complete my workshops and assignments.
 #include "LibApp.h"
 #include "PublicationSelector.h"
 #include "Publication.h"
+#include "Utils.h"
 
 using namespace std;
 namespace sdds {
@@ -221,11 +222,42 @@ namespace sdds {
 
 	}
 
+	//	- Print: `"Return publication to the library"`
+	//	- Search for "on loan" publications only
+	//	- If the user selects a publication and confirms the return using the prompt : `"Return Publication ? "`
+	//	- If the publication is more than 15 days on loan, a 50 cents per day penalty will be calculated for the number of days exceeding the 15 days.
+	//	- Following message is printed : `Please pay $9.99 penalty for being X days late!`, 9.99 is replaced with the penalty value and X is replaced with the number of late days.
+	//	- set the membership number of the publication to 0 (zero)
+	//	-set the "changed" flag to true
+	//	- print: `"Publication returned"
+
 	void LibApp::returnPub() {
-		search();
+
 		cout << "Returning publication" << endl;
-		cout << "Publication returned" << endl;
-		m_changed = true;
+		int userSelection = search(2);
+
+		if (userSelection && confirm("Return Publication ? ")) {
+
+			Date today;
+			int loanDays = today - getPub(userSelection)->checkoutDate();
+
+			if (loanDays > 15) {
+
+				double penalty = 0.50 * (loanDays - 15);
+				cout << "Please pay $";
+				cout.setf(ios::fixed);
+				cout.precision(2);
+				cout << penalty;
+				cout.unsetf(ios::fixed);
+				cout<< " penalty for being " << (loanDays - 15) << " days late!";
+
+				getPub(userSelection)->set(0);
+				m_changed = true;
+				cout << "Publication returned" << endl;
+			}
+
+		}
+
 		cout << endl;
 	}
 	
@@ -298,6 +330,16 @@ namespace sdds {
 
 	}
 
+	/* 
+	    - print: `"Removing publication from the library"`
+		- Search all the publications
+		- If the user selects a publication and confirms to remove the publication using the prompt :
+		  "Remove this publication from the library ? "
+		- Set the library reference of the selected publication to 0 (zero)
+		- set the "changed" flag to true
+		- print : `"Publication removed"`
+	*/
+
 	void LibApp::removePublication() {
 
 		cout << "Removing publication from library" << endl;
@@ -316,15 +358,30 @@ namespace sdds {
 		cout << endl;
 	}
 
+
+	//	- print: `"Checkout publication from the library"`
+	//	- Search in available publications only
+	//	- If the user selects a publication and confirms to checkout using the prompt : `"Check out publication ? "`
+	//	- read a 5 digit number from the console, if invalid print : `"Invalid membership number, try again: "` and read again
+	//	- set the membership number of the selected publication the integer value.
+	//	- set the changed flag to true
+	//	- print : `"Publication checked out"`
+
 	void LibApp::checkOutPub() {
-		search();
-		int result = confirm("Check out publication?");
-		if (result) {
+
+		cout << "Checkout publication from the library" << endl;
+
+		int selectedPub = search(3);
+
+		if (selectedPub && confirm("Check out publication?")) {
+			int membershipNo = ut.getUserInt(10000, 99999, "Invalid membership number, try again: ");
+			getPub(selectedPub)->set(membershipNo);
 			m_changed = true;
 			cout << "Publication checked out" << endl;
 		}
 		cout << endl;
 	}
+
 
 	Publication* LibApp::getPub(int libRef)
 	{
