@@ -79,4 +79,27 @@ namespace sdds {
         return userInput;
 
     }
+
+    int getUserInt(const int min, const int max, const char* error) {
+
+        int userInput;
+        bool validInput = false;
+
+        do {
+            cin >> userInput;
+            if (cin.fail() || userInput < min || userInput > max) {
+                cout << error;
+                cin.clear();
+                cin.ignore(1000, '\n');
+            }
+            else {
+                validInput = true;
+            }
+        } while (!validInput);
+
+        return userInput;
+
+    }
+
+
 }

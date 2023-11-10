@@ -38,6 +38,9 @@ namespace sdds {
         void strAloCpy(char*& des, const char* src);
 
         int getUserInt(const int min, const int max);
+
+        int getUserInt(const int min, const int max, const char* error);
+
     };
     extern Utils ut;
 
