@@ -230,7 +230,43 @@ namespace sdds {
 	}
 	
 	void LibApp::newPublication() {
-		cout << "Adding new publication to library" << endl;
+
+		if (m_nolp == SDDS_LIBRARY_CAPACITY) {
+
+			cout << "Library is at its maximum capacity!";
+
+		} else {
+
+			cout << "Adding new publication to library" << endl;
+
+			m_changed = true;
+
+			int tempType = m_pubType.run();
+
+			if (tempUserSelection == 0) {
+
+				cout << "Aborted!" << endl;
+
+			}
+			else {
+
+				if (tempUserSelection == 1) {
+
+					m_ppa[m_nolp] = new Book;
+
+				}
+				else {
+
+					m_ppa[m_nolp] = new Publication;
+
+				}
+
+			}
+
+
+		}
+
+
 		int result = confirm("Add this publication to library?");
 		if (result) {
 			m_changed = true;
@@ -259,6 +295,22 @@ namespace sdds {
 			cout << "Publication checked out" << endl;
 		}
 		cout << endl;
+	}
+
+	Publication* LibApp::getPub(int libRef)
+	{
+		for (int i = 0; i < m_nolp; i++) {
+
+			if (m_ppa[i]->getRef() == libRef) {
+
+				return m_ppa[i];
+
+			}
+
+		}
+
+		return nullptr;
+
 	}
 
 	void LibApp::run()

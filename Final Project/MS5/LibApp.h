@@ -45,6 +45,7 @@ namespace sdds {
        void newPublication();
        void removePublication();
        void checkOutPub();
+       Publication* getPub(int libRef);
 
    public:
 
