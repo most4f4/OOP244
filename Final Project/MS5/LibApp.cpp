@@ -239,30 +239,65 @@ namespace sdds {
 
 			cout << "Adding new publication to library" << endl;
 
-			m_changed = true;
-
 			int tempType = m_pubType.run();
 
-			if (tempUserSelection == 0) {
+			if (tempType == 0) {
 
 				cout << "Aborted!" << endl;
 
 			}
 			else {
 
-				if (tempUserSelection == 1) {
+				Publication* p;
 
-					m_ppa[m_nolp] = new Book;
+				if (tempType == 1) {
+
+					p = new Book;
 
 				}
 				else {
 
-					m_ppa[m_nolp] = new Publication;
+					p = new Publication;
+
+				}
+
+				p->read(cin);
+
+				if (cin.fail()) {
+
+					cin.ignore(1000, '\n');
+					cin.clear();
+					cout << "Aborted!" << endl;
+				}
+				else {
+
+					int tempConfirm = confirm("Add this publication to the library?");
+
+					if (tempConfirm == 0) {
+
+						cout << "Aborted!" << endl;
+
+					}
+					else {
+
+						m_llrn++;
+						p->setRef(m_llrn);
+						m_ppa[m_nolp] = p;
+						m_nolp++;
+						m_changed = true;
+						cout << "Failed to add publication!" << endl;
+					}
+
+				}
+
+				if (!p) {
+
+					cout << "Failed to add publication!" << endl;
+					delete p;
 
 				}
 
 			}
-
 
 		}
 
