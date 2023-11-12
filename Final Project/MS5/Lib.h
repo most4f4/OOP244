@@ -33,7 +33,7 @@ namespace sdds {
     const int SDDS_SHELF_ID_LEN = 4;
 
     // Maximum number of publications the library can hold.
-    const int SDDS_LIBRARY_CAPACITY = 5000;
+    const int SDDS_LIBRARY_CAPACITY = 333;
 
 }
 

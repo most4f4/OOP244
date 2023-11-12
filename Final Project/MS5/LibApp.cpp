@@ -272,7 +272,7 @@ namespace sdds {
 
 		if (m_nolp == SDDS_LIBRARY_CAPACITY) {
 
-			cout << "Library is at its maximum capacity!";
+			cout << "Library is at its maximum capacity!" << endl;
 
 		} else {
 
