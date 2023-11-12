@@ -384,7 +384,8 @@ namespace sdds {
 
 		int selectedPub = search(3);
 
-		if (selectedPub && confirm("Check out publication?")) {
+		if (selectedPub>0 && confirm("Check out publication?")) {
+			cout << "Enter Membership number: ";
 			int membershipNo = ut.getUserInt(10000, 99999, "Invalid membership number, try again: ");
 			getPub(selectedPub)->set(membershipNo);
 			m_changed = true;
