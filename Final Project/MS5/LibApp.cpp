@@ -286,6 +286,10 @@ namespace sdds {
 
 				tempType == 1 ? p = new Book : p = new Publication;
 
+				//  clear any existing characters in the input buffer
+				//  ensuring that read starts with an empty buffer and waits for user input.
+				cin.ignore();
+
 				p->read(cin);
 
 				if (cin.fail()) {
