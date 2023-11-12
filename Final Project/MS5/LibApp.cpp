@@ -256,7 +256,7 @@ namespace sdds {
 				cout.precision(2);
 				cout << penalty;
 				cout.unsetf(ios::fixed);
-				cout<< " penalty for being " << (loanDays - 15) << " days late!";
+				cout << " penalty for being " << (loanDays - 15) << " days late!" << endl;
 
 				getPub(userSelection)->set(0);
 				m_changed = true;
