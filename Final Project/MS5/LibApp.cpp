@@ -204,7 +204,12 @@ namespace sdds {
 
 				userSelection = ps.run();
 
-				if (userSelection == 0) {
+				if (userSelection > 0) {
+
+					cout << *getPub(userSelection) << endl;
+
+				}
+				else {
 
 					cout << "Aborted!" << endl;
 
