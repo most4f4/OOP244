@@ -129,7 +129,7 @@ namespace sdds {
 				os << " N/A ";
 			}
 
-			os << " | " << m_date << " | ";
+			os << " | " << m_date << " |";
 		}
 		else {
 			os << type() << '\t' << m_shelfId << '\t' << m_title << '\t';
