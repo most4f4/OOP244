@@ -111,7 +111,7 @@ namespace sdds {
 	{
 
 		displayMenu();
-		unsigned int selection = getUserInt(0, itemCount);
+		unsigned int selection = ut.getUserInt(0, itemCount);
 		return selection;
 	}
 

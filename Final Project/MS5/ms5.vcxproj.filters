@@ -24,13 +24,7 @@
     <ClCompile Include="LibApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LibAppMain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Menu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PublicationSelector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Streamable.cpp">
@@ -39,10 +33,13 @@
     <ClCompile Include="Utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pubSel_Tester.cpp">
+    <ClCompile Include="Publication.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Publication.cpp">
+    <ClCompile Include="PublicationSelector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LibAppMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

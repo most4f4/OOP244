@@ -60,8 +60,8 @@ namespace sdds {
         }
     }
 
-    int getUserInt(const int min, const int max) {
-
+    int Utils::getUserInt(const int min, const int max)
+    {
         int userInput;
         bool validInput = false;
 
@@ -77,12 +77,11 @@ namespace sdds {
             }
         } while (!validInput);
 
-        return userInput;
-
+        return userInput;;
     }
 
-    int getUserInt(const int min, const int max, const char* error) {
-
+    int Utils::getUserInt(const int min, const int max, const char* error)
+    {
         int userInput;
         bool validInput = false;
 
@@ -99,8 +98,6 @@ namespace sdds {
         } while (!validInput);
 
         return userInput;
-
     }
-
 
 }
