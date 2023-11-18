@@ -29,7 +29,7 @@ namespace sdds {
 
    bool load(Employee& emp)
    {
-       bool ok = false;
+       bool result = false;
 
        //A temporary storage for the name before allocating dynamic memory for m_name.
        char name[128];
@@ -39,14 +39,14 @@ namespace sdds {
        {
            emp.m_name = new char[strLen(name) + 1];
            strCpy(emp.m_name, name);
-           ok = true;
+           result = true;
        }
-       return ok;
+       return result;
    }
 
    bool load() {
 
-      bool ok = false;
+      bool result = false;
       int i = 0;
 
       if (openFile(DATAFILE)) {
@@ -66,14 +66,14 @@ namespace sdds {
            }
            else
            {
-               ok = true;
+               result = true;
            }
 
            closeFile();
 
       } else cout << "Could not open data file: " << DATAFILE << endl;
 
-      return ok;
+      return result;
    }
 
    void display(const Employee& emp)
