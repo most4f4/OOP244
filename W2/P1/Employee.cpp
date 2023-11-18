@@ -30,8 +30,11 @@ namespace sdds {
    bool load(Employee& emp)
    {
        bool ok = false;
+
+       //A temporary storage for the name before allocating dynamic memory for m_name.
        char name[128];
 
+       // read(name) reads the employee's name from the file and stores it in the local array name. 
        if (read(emp.m_empNo) && read(emp.m_salary) && read(name))
        {
            emp.m_name = new char[strLen(name) + 1];
