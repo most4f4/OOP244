@@ -5,6 +5,7 @@
 #include "Employee.h"
 #include "File.h"
 using namespace std;
+
 namespace sdds {
 
    int noOfEmployees;
@@ -41,8 +42,10 @@ namespace sdds {
    }
 
    bool load() {
+
       bool ok = false;
       int i = 0;
+
       if (openFile(DATAFILE)) {
          
           noOfEmployees = noOfRecords();
@@ -64,9 +67,9 @@ namespace sdds {
            }
 
            closeFile();
-      } else {
-         cout << "Could not open data file: " << DATAFILE<< endl;
-      }
+
+      } else cout << "Could not open data file: " << DATAFILE << endl;
+
       return ok;
    }
 

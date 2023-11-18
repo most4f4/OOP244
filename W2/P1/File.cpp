@@ -3,11 +3,14 @@
 #include "File.h"
 
 namespace sdds {
+
    FILE* fptr;
+
    bool openFile(const char filename[]) {
       fptr = fopen(filename, "r");
       return fptr != NULL;
    }
+
    int noOfRecords() {
       int noOfRecs = 0;
       char ch;
@@ -22,23 +25,14 @@ namespace sdds {
    }
    
    bool read(char empName[]) {
-       if (fscanf(fptr, "%[^\n]\n", empName) == 1) {
-           return true;
-       }
-       return false;
+       return fscanf(fptr, "%[^\n]\n", empName) == 1;
    }
 
    bool read(int& empNo) {
-       if (fscanf(fptr, "%d,", &empNo) == 1) {
-           return true;
-       }
-       return false;
+       return fscanf(fptr, "%d,", &empNo) == 1;
    }
 
    bool read(double& empSalary) {
-       if (fscanf(fptr, "%lf,", &empSalary) == 1) {
-           return true;
-       }
-       return false;
+       return fscanf(fptr, "%lf,", &empSalary) == 1;
    }
 }
