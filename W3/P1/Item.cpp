@@ -99,14 +99,12 @@ namespace sdds {
             cout.fill(' ');
             cout.unsetf(ios::left);
 
-            cout.setf(ios::right);
             cout.setf(ios::fixed);
             cout.width(7);
             cout.precision(2);
             cout << m_price;
             cout << " | ";
             cout.unsetf(ios::fixed);
-            cout.unsetf(ios::right);
 
             m_taxed ? cout << "Yes" : cout << "No ";
             cout << " |" << endl;
