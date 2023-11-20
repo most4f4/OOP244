@@ -111,9 +111,13 @@ namespace sdds {
 
             while (getline(readfile, line)) // checks if a line can be successfully read from the file
             {
-
-                //set the m_textLines array elements to the values returned by the c_str() method of the string object
+                //line.c_str() gets a pointer to a null-terminated C-string (const char*) from the std::string object
+                // Since Line class has an overloaded assignment operator (operator=) that takes a const char* as an argument. 
                 m_textLines[count] = line.c_str();
+                // Since we have direct access to the private members of the Line class:
+                //m_textLines[count].m_value = new char[strlen(line.c_str()) + 1];
+                //strcpy(m_textLines[count].m_value, line.c_str());
+
                 count++;
             }
 
