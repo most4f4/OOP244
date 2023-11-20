@@ -79,10 +79,8 @@ namespace sdds
 			cout.unsetf(ios::left);
 			cout << " | ";
 
-			cout.setf(ios::right);
 			cout.width(4);
 			cout << f_calNo;
-			cout.unsetf(ios::right);
 			cout << " | ";
 
 			cout.setf(ios::left);
