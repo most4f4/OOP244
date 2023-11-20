@@ -44,12 +44,7 @@ namespace sdds {
 
 	Mark::operator int() const
 	{
-		if (m_mark == -1) {
-			return 0;
-		}
-		else {
-			return m_mark;
-		}
+		return (m_mark != -1) ? m_mark : 0;
 	}
 
 	Mark::operator double() const
