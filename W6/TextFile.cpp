@@ -72,7 +72,9 @@ namespace sdds {
 
     void TextFile::setNoOfLines()
     {
+        //An instance of the ifstream class, which is used for reading data from a file
         ifstream readfile(m_filename);
+
         m_noOfLines = 0;
         char ch;
 
