@@ -37,7 +37,7 @@ namespace sdds {
       friend class TextFile;
 
       // copy and copy assignment prevention
-      Line(Line&) = delete;
+      Line(const Line&) = delete;
       Line& operator=(const Line&) = delete;
 
    };
