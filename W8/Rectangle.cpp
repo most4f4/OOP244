@@ -32,7 +32,7 @@ namespace sdds {
 
     Rectangle::Rectangle(const char* str, int width, int height) : LblShape(str)
     {
-        if (height >= 3 && width >= strlen(label()) + 2) {
+        if (height >= 3 && width >= strlen(LblShape::label()) + 2) {
             m_height = height;
             m_width = width;
         }
