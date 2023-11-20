@@ -49,42 +49,24 @@ namespace sdds {
 
 	Mark::operator double() const
 	{
-		if (m_mark >=0 && m_mark <50) {
-			return 0.0;
-		} else if (m_mark >= 50 && m_mark < 60) {
-			return 1.0;
-		} else if (m_mark >= 60 && m_mark < 70) {
-			return 2.0;
-		} else if (m_mark >= 70 && m_mark < 80) {
-			return 3.0;
-		} else if (m_mark >= 80 && m_mark < 100) {
-			return 4.0;
-		}
-		else {
-			return 0.0;
-		}
+
+		if (m_mark >=0 && m_mark <50) return 0.0;
+		else if (m_mark >= 50 && m_mark < 60) return 1.0;
+		else if (m_mark >= 60 && m_mark < 70) return 2.0;
+		else if (m_mark >= 70 && m_mark < 80) return 3.0;
+		else if (m_mark >= 80 && m_mark < 100) return 4.0;
+		else return 0.0;
+
 	}
 
 	Mark::operator char() const
 	{
-		if (m_mark >= 0 && m_mark < 50) {
-			return 'F';
-		}
-		else if (m_mark >= 50 && m_mark < 60) {
-			return 'D';
-		}
-		else if (m_mark >= 60 && m_mark < 70) {
-			return 'C';
-		}
-		else if (m_mark >= 70 && m_mark < 80) {
-			return 'B';
-		}
-		else if (m_mark >= 80 && m_mark < 100) {
-			return 'A';
-		}
-		else {
-			return 'X';
-		}
+		if (m_mark >= 0 && m_mark < 50) return 'F';
+		else if (m_mark >= 50 && m_mark < 60) return 'D';
+		else if (m_mark >= 60 && m_mark < 70) return 'C';
+		else if (m_mark >= 70 && m_mark < 80) return 'B';
+		else if (m_mark >= 80 && m_mark < 100) return 'A';
+		else return 'X';
 
 	}
 
