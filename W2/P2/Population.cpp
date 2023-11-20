@@ -34,16 +34,14 @@ namespace sdds{
 
 
     void sort() {
-        for (int i = 1; i < numPosts; i++) {
-            PostalCode current = postcode[i];
-            int j = i - 1;
-
-            while (j >= 0 && postcode[j].population > current.population) {
-                postcode[j + 1] = postcode[j];
-                j--;
+        for (int i = 0; i < numPosts - 1; i++) {
+            for (int j = 0; j < numPosts - i - 1; j++) {
+                if (postcode[j].population > postcode[j + 1].population) {
+                    PostalCode temp = postcode[j];
+                    postcode[j] = postcode[j + 1];
+                    postcode[j + 1] = temp;
+                }
             }
-
-            postcode[j + 1] = current;
         }
     }
 
