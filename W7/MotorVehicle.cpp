@@ -38,12 +38,10 @@ namespace sdds {
 			strCpy(address, location);
 			
 			cout << "|";
-			cout.setf(ios::right);
 			cout.width(8);
 			cout << licensePlate << "| |";
 			cout.width(20);
 			cout << address << " ---> ";
-			cout.unsetf(ios::right);
 			cout.width(20);
 			cout.setf(ios::left);
 			cout << location;
