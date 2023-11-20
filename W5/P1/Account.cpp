@@ -49,6 +49,7 @@ namespace sdds
 			cout.precision(2);
 			cout.setf(ios::fixed);
 			cout << m_balance;
+			cout.unsetf(ios::fixed);
 			cout << " ";
 		}
 		else if (~*this) {
@@ -82,7 +83,7 @@ namespace sdds
 
 	Account& Account::operator=(int number)
 	{
-		if (m_number == 0) // Check if the account is new
+		if (~*this) // Check if the account is new
 		{
 			if (number >= 10000 && number <= 99999)
 			{
@@ -99,7 +100,7 @@ namespace sdds
 	Account& Account::operator=(Account& src)
 	{
 		// Check if the left account is new and the right account is valid
-		if (m_number == 0 && src)
+		if (~*this && src)
 		{
 			m_number = src.m_number;
 			m_balance = src.m_balance;
@@ -130,7 +131,7 @@ namespace sdds
 	Account& Account::operator<<(Account& src)
 	{
 		// Check if the accounts are not the same and both accounts are valid
-		if (m_number != src.m_number && *this && src)
+		if (this != &src && *this && src)
 		{
 			m_balance += src.m_balance;
 			src.m_balance = 0.0;
