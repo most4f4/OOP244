@@ -32,6 +32,7 @@ namespace sdds {
 
 	Line::Line(const char* str, int length) : LblShape(str)
 	{
+		m_length = 0; // Initialize m_length to 0
 		if (length > 0) {
 			m_length = length;
 		}
