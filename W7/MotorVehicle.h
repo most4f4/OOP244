@@ -60,6 +60,12 @@ namespace sdds {
 
 	// Overloaded input stream operator
 	std::istream& operator>>(std::istream& in, MotorVehicle& vehicle);
+
+	/*
+	Since the insertion and extraction operators use the write/read public member functions
+	in their implementations, neither getter functions need to be defined nor friendship
+	to be applied,
+	*/
 }
 
 
