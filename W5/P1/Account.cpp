@@ -144,7 +144,7 @@ namespace sdds
 	Account& Account::operator>>(Account& src)
 	{
 		// Check if the accounts are not the same and both accounts are valid
-		if (m_number != src.m_number && *this && src)
+		if (this != &src && *this && src)
 		{
 			src.m_balance += m_balance;
 			m_balance = 0.0;
