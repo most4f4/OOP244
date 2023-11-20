@@ -79,13 +79,10 @@ namespace sdds {
         if (readfile) {
             while (readfile.get(ch))
             {
-                if (ch == '\n') {
-                    m_noOfLines++;
-                }
-
-                // Increase m_noOfLines by one if the last line doesn't have a newline character
-                m_noOfLines++;
+                if (ch == '\n') m_noOfLines++;
             }
+            // Increase m_noOfLines by one if the last line doesn't have a newline character
+            m_noOfLines++;
         }
         else setEmpty();
 
@@ -223,7 +220,7 @@ namespace sdds {
                 // Pause after printing m_pageSize lines
                 if (count == m_pageSize) {
                     cout << "Hit ENTER to continue...";
-                    cin.get();
+                    std::cin.get();
                     count = 0;
                 }
             }
