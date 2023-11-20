@@ -93,10 +93,8 @@ namespace sdds
 		{
 
 			cout << "|    Total Calories for today:";
-			cout.setf(ios::right);
 			cout.width(9);
 			cout << totalCalories();
-			cout.unsetf(ios::right);
 			cout << " |            |" << endl;
 		}
 		else 
