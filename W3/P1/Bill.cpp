@@ -107,7 +107,6 @@ namespace sdds {
         {
             cout << "|                Total Tax: ";
             cout.setf(ios::fixed);
-            cout.setf(ios::right);
             cout.width(10);
             cout.precision(2);
             cout << totalTax();
@@ -120,8 +119,6 @@ namespace sdds {
             cout.width(10);
             cout << totalTax() + totalPrice();
             cout << " |" << endl;
-            cout.unsetf(ios::right);
-
 
         }
         else
