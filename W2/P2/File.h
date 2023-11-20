@@ -19,7 +19,9 @@ professor provided to complete my workshops and assignments.
 
 #ifndef SDDS_FILE_H_
 #define SDDS_FILE_H_
+
 namespace sdds{
+
 	bool openFile(const char filename[]);
 	void closeFile();
 	int noOfRecords();
@@ -28,4 +30,5 @@ namespace sdds{
 	bool read(int& population);
 
 } 
+
 #endif 

@@ -22,6 +22,7 @@ professor provided to complete my workshops and assignments.
 #include "File.h"
 
 namespace sdds{
+
     FILE* fptr;
 
     bool openFile(const char file[]){

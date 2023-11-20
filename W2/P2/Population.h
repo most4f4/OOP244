@@ -21,6 +21,7 @@ professor provided to complete my workshops and assignments.
 #define SDDS_POPULATION_H_
 
 namespace sdds{
+
     struct PostalCode{
         char* code;
         int population;
@@ -34,4 +35,5 @@ namespace sdds{
     void deallocateMemory();
 
 } 
+
 #endif 

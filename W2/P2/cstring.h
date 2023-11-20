@@ -38,6 +38,4 @@ namespace sdds {
 
 }
 
-
-
 #endif

@@ -27,6 +27,7 @@ professor provided to complete my workshops and assignments.
 using namespace std;
 
 namespace sdds{
+
     int numPosts;
     int population;
     PostalCode* postcode;
