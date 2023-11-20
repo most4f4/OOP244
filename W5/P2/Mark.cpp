@@ -92,9 +92,6 @@ namespace sdds {
 		return *this;
 	}
 
-
-
-
 	int& operator+=(int& value, const Mark& mark)
 	{
 		if (mark.m_mark != -1) {
