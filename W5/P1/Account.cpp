@@ -47,10 +47,8 @@ namespace sdds
 			cout << " | ";
 			cout.width(12);
 			cout.precision(2);
-			cout.setf(ios::right);
 			cout.setf(ios::fixed);
 			cout << m_balance;
-			cout.unsetf(ios::right);
 			cout << " ";
 		}
 		else if (~*this) {
