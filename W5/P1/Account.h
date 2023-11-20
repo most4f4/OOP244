@@ -44,9 +44,9 @@ namespace sdds {
       Account& operator<<(Account& src); // Moves funds from the right account to the left
       Account& operator>>(Account& src); // Moves funds from the left account to the right
       //Returns the sum of the balances of the two accounts
-      friend double operator+(const Account& left, const Account& right);
+      friend double operator+(const Account& leftOperand, const Account& rightOperand);
       // Returns the sum of the balance of the right account should and the left value
-      friend double& operator+=(double& left, const Account& right);
+      friend double& operator+=(double& leftOperand, const Account& rightOperand);
    };
 
 

@@ -153,22 +153,22 @@ namespace sdds
 		return *this;
 	}
 
-	double operator+(const Account& left, const Account& right)
+	double operator+(const Account& leftOperand, const Account& rightOperand)
 	{
-		if (left && right)
+		if (leftOperand && rightOperand)
 		{
-			return left.m_balance + right.m_balance; // Return the sum of the balances
+			return leftOperand.m_balance + rightOperand.m_balance; // Return the sum of the balances
 		}
 		return 0.0; // Return zero if any of the accounts is invalid
 	}
 
-	double& operator+=(double& left, const Account& right)
+	double& operator+=(double& leftOperand, const Account& rightOperand)
 	{
-		if (right)
+		if (rightOperand)
 		{
-			left += right.m_balance;
+			leftOperand += rightOperand.m_balance;
 		}
-		return left;
+		return leftOperand;
 	}
 
 }
