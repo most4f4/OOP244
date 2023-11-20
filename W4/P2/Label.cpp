@@ -29,6 +29,7 @@ namespace sdds
 		strCpy(frame, "+-+|+-+|"); // Copy the default frame to the frame member variable
 		content = nullptr; 
 	}
+
 	Label::Label(const char* frameArg)
 	{
 		strCpy(frame, frameArg); // Copy the frame argument to the frame member variable
@@ -54,9 +55,8 @@ namespace sdds
 	{
 		delete[] content; // Deallocate the dynamic memory for content
 		content = nullptr;
-
-
 	}
+
 	void Label::readLabel()
 	{
 		if (content != nullptr) {
