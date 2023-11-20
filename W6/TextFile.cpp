@@ -104,11 +104,11 @@ namespace sdds {
             // a local instance of ifstream using the file name (m_filename) to read the lines of the text file.
             ifstream readfile(m_filename);
 
-            //Read the line using a local C++ string object and the getline helper function
-            string line;
+            string line; //This string will be used to store each line read from the file.
             int count = 0;
 
-            while (getline(readfile, line)) {
+            while (getline(readfile, line)) // checks if a line can be successfully read from the file
+            {
 
                 //set the m_textLines array elements to the values returned by the c_str() method of the string object
                 m_textLines[count] = line.c_str();
@@ -220,7 +220,7 @@ namespace sdds {
                 // Pause after printing m_pageSize lines
                 if (count == m_pageSize) {
                     cout << "Hit ENTER to continue...";
-                    std::cin.get();
+                    cin.get();
                     count = 0;
                 }
             }
