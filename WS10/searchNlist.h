@@ -49,17 +49,14 @@ namespace sdds {
 	/// 2- The Collection class must have a member function named add that adds an object of type T1.
 	///
 	template <typename T1, typename T2>
-	bool search(Collection<T1>& obj, T1 arr[], int numElements, T2 key) {
-		
+	bool search(Collection<T1>& obj, T1 arr[], int numElements, T2 key) {	
 		bool result = false;
-
 		for (int i = 0; i < numElements; i++) {
 			if (arr[i] == key) { // REQUIREMENT 1 
 				result = true;
 				obj.add(arr[i]); // REQUIREMENT 2
 			}
 		}
-
 		return result;
 	}
 	
@@ -69,6 +66,7 @@ namespace sdds {
 	/// </summary>
 	/// 
 	/// <typeparam name="T"> The type of objects in the array. </typeparam>
+	/// 
 	/// <param name="title"> he title to be printed before listing the array elements. </param>
 	/// <param name="arr"> A constant array of templated objects of type T.</param>
 	/// <param name="numElements"> Number of elements in the array. </param>
@@ -79,13 +77,10 @@ namespace sdds {
 	///
 	template <typename T>
 	void listArrayElements(const char* title, const T arr[], int numElements) {
-
 		cout << title << endl;
-
 		for (int i = 0; i < numElements; i++) {
 			cout << i + 1 << ": " << arr[i] << endl; // REQUIREMENT 1
 		}
-
 	}
 
 }
